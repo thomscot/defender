@@ -1,0 +1,1098 @@
+extends layout
+
+block content
+	//if lt IE 7
+		html.no-js.lt-ie9.lt-ie8.lt-ie7  
+	//if IE 7
+		html.no-js.lt-ie9.lt-ie8  
+	//if IE 8
+		html.no-js.lt-ie9  
+	// [if gt IE 8] <!
+	html.no-js
+		// <![endif]
+		head
+			meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+			meta(name='description', content='Defenders app')
+			meta(name='author', content='Thom Scott')
+			title title | subtitle 
+			//
+				Mobile Specific Meta
+				==================================================
+			
+			meta(name='viewport', content='width=device-width, initial-scale=1')
+	
+			script.
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-54152927-1', 'auto');
+				ga('send', 'pageview');
+		body#body
+			//
+				Start Preloader
+				====================================
+			#loading-mask
+				.loading-img
+					img(alt='Meghna Preloader', src='/images/preloader.gif')
+			//
+				End Preloader
+				====================================
+			//
+				Welcome Slider
+				====================================
+			section#home
+				#slitSlider.sl-slider-wrapper
+					.sl-slider
+						// single slide item
+						.sl-slide(data-orientation='horizontal', data-slice1-rotation='-25', data-slice2-rotation='-25', data-slice1-scale='2', data-slice2-scale='2')
+							.sl-slide-inner
+								.bg-img.bg-img-1
+								.carousel-caption
+									div
+										img.wow.fadeInUp(src='images/meghna.png', alt='Meghna')
+										h2.heading.animated.fadeInRight(data-wow-duration='500ms', data-wow-delay='500ms') Welcome To Meghna
+									// div
+								// / carousel and big-img
+							// /slide-inner	
+						// /slide
+						// single slide item
+						.sl-slide(data-orientation='vertical', data-slice1-rotation='10', data-slice2-rotation='-15', data-slice1-scale='1.5', data-slice2-scale='1.5')
+							.sl-slide-inner
+								.bg-img.bg-img-2
+								.carousel-caption
+									div
+										h2.heading.animated.fadeInDown Highly Responsive
+										h3.animated.fadeInUp With all Mejor Browser support including IE 9
+										a.btn.btn-green.animated.fadeInUp(href='#') Get Started
+						// /single slide item
+						// single slide item
+						.sl-slide(data-orientation='horizontal', data-slice1-rotation='3', data-slice2-rotation='3', data-slice1-scale='2', data-slice2-scale='1')
+							.sl-slide-inner
+								.bg-img.bg-img-3
+								.carousel-caption
+									div
+										h2.heading.animated.fadeInRight One Page Parallax HTML Template
+										h3.animated.fadeInLeft Clean and Professional Design
+										a.btn.btn-green.animated.fadeInUp(href='#') Learn More
+						// /single slide item
+					// /sl-slider
+					nav#nav-arrows.nav-arrows
+						span.nav-arrow-prev Previous
+						span.nav-arrow-next Next
+					nav#nav-dots.nav-dots
+						span.nav-dot-current
+						span
+						span
+				// /slider-wrapper
+			// /#home section
+			// Fixed Navigation
+					====================================
+			header#navigation.navbar.navbar-inverse
+				.container
+					.navbar-header
+						// responsive nav button
+						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						// /responsive nav button
+						// logo
+						a.navbar-brand(href='#body')
+							h1#logo
+								img(src='/images/logo-meghna.png', alt='Meghna')
+						// /logo
+					// main nav
+					nav.collapse.navbar-collapse.navbar-right(role='Navigation')
+						ul#nav.nav.navbar-nav
+							li.current
+								a(href='#body') Home
+							li
+								a(href='#about') About Us
+							li
+								a(href='#services') Services
+							li
+								a(href='#showcase') Portfolio
+							li
+								a(href='#our-team') Team
+							li
+								a(href='#pricing') Pricing
+							li
+								a(href='#blog') Blog
+							li
+								a(href='#contact-us') Contact
+					// /main nav
+			//
+				End Fixed Navigation
+				====================================
+			//
+				Start About Section
+				====================================
+			section#about.bg-one
+				.container
+					.row
+						// section title
+						.title.text-center.wow.fadeIn(data-wow-duration='1500ms')
+							h2
+								| About 
+								span.color Us
+							.border
+						// /section title
+						// About item
+						.col-md-4.text-center.wow.fadeInUp(data-wow-duration='500ms')
+							.wrap-about
+								.icon-box
+									i.fa.fa-lightbulb-o.fa-4x
+								// Express About Yourself
+								.about-content.text-center
+									h3.ddd We're Creative
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos
+						// End About item
+						// About item
+						.col-md-4.text-center.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='250ms')
+							.wrap-about
+								.icon-box
+									i.fa.fa-users.fa-4x
+								// Express About Yourself
+								.about-content.text-center
+									h3 We're Professional
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos
+						// End About item
+						// About item
+						.col-md-4.text-center.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='500ms')
+							.wrap-about.kill-margin-bottom
+								.icon-box
+									i.fa.fa-users.fa-4x
+								// Express About Yourself
+								.about-content.text-center
+									h3 We're Professional
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos
+						// End About item
+					// End row
+				// End container
+			// End section
+			//
+				Start Main Features
+				====================================
+			section#main-features
+				.container
+					.row
+						// features item
+						#features
+							.item
+								.features-item
+									// features media
+									.col-md-6.feature-media.media-wrapper.wow.fadeInUp(data-wow-duration='500ms')
+										iframe(src='https://player.vimeo.com/video/108018156', allowfullscreen='')
+									// /features media
+									// features content
+									.col-md-6.feature-desc.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='300ms')
+										h3 Main Features of Meghna
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!
+										a.btn.btn-transparent(href='#') Learn More
+										a.btn.btn-transparent(href='#') Purchase Theme
+									// /features content
+							.item
+								.features-item
+									// features media
+									.col-md-6.feature-media.wow.fadeInUp(data-wow-duration='500ms')
+										img.img-responsive(src='images/blog/3D-beach-art.jpg', alt='3D Beach Art | Meghna')
+									// /features media
+									// features content
+									.col-md-6.feature-desc.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='300ms')
+										h3 Main Features of Meghna
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!
+										a.btn.btn-transparent(href='#') Learn More
+										a.btn.btn-transparent(href='#') Purchase Theme
+									// /features content
+						// /features item
+					// End row
+				// End container
+			// End section
+			//
+				Start Counter Section
+				====================================
+			section#counter.parallax-section
+				.container
+					.row
+						// first count item
+						.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInDown(data-wow-duration='500ms')
+							.counters-item
+								div
+									span(data-speed='3000', data-to='320') 320
+								i.fa.fa-users.fa-3x
+								h3 Happy Clients
+						// end first count item
+						// second count item
+						.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='200ms')
+							.counters-item
+								div
+									span(data-speed='3000', data-to='565') 565
+								i.fa.fa-check-square.fa-3x
+								h3 Projects completed
+						// end second count item
+						// third count item
+						.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='400ms')
+							.counters-item
+								div
+									span(data-speed='3000', data-to='95') 95
+									span %
+								i.fa.fa-thumbs-up.fa-3x
+								h3 Positive feedback
+						// end third count item
+						// fourth count item
+						.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='600ms')
+							.counters-item.kill-margin-bottom
+								div
+									span(data-speed='3000', data-to='2500') 2500
+								i.fa.fa-coffee.fa-3x
+								h3 Cups of Coffee
+						// end fourth count item
+					// end row
+				// end container
+			// end section
+			//
+				Start Services Section
+				====================================
+			section#services.bg-one
+				.container
+					.row
+						// section title
+						.title.text-center.wow.fadeIn(data-wow-duration='500ms')
+							h2
+								| Our 
+								span.color Services
+							.border
+						// /section title
+						// Single Service Item
+						article.col-md-4.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
+							.service-block.text-center
+								.service-icon.text-center
+									i.fa.fa-wordpress.fa-5x
+								h3 WordPress Theme
+								p
+									| Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.
+						// End Single Service Item
+						// Single Service Item
+						article.col-md-4.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='200ms')
+							.service-block.text-center
+								.service-icon.text-center
+									i.fa.fa-desktop.fa-5x
+								h3 Responsive Design
+								p
+									| Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.
+						// End Single Service Item
+						// Single Service Item
+						article.col-md-4.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='400ms')
+							.service-block.text-center
+								.service-icon.text-center
+									i.fa.fa-play.fa-5x
+								h3 Media & Advertisement
+								p
+									| Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.
+						// End Single Service Item
+						// Single Service Item
+						article.col-md-4.col-sm-6.col-xs-12.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='200ms')
+							.service-block.text-center
+								.service-icon.text-center
+									i.fa.fa-eye.fa-5x
+								h3 Graphic Design
+								p
+									| Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.
+						// End Single Service Item
+						// Single Service Item
+						article.col-md-4.col-sm-6.col-xs-12.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='400ms')
+							.service-block.text-center
+								.service-icon.text-center
+									i.fa.fa-android.fa-5x
+								h3 Apps Development
+								p
+									| Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.
+						// End Single Service Item
+						// Single Service Item
+						article.col-md-4.col-sm-6.col-xs-12.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='600ms')
+							.service-block.text-center.kill-margin-bottom
+								.service-icon.text-center
+									i.fa.fa-link.fa-5x
+								h3 Networking
+								p
+									| Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.
+						// End Single Service Item
+					// End row
+				// End container
+			// End section
+			//
+				Start Portfolio Section
+				===========================================
+			section#showcase
+				.container
+					.row.wow.fadeInDown(data-wow-duration='500ms')
+						.col-lg-12
+							// section title
+							.title.text-center
+								h2
+									| Our 
+									span.color Works
+								.border
+							// /section title
+							// portfolio item filtering
+							.portfolio-filter.clearfix
+								ul.text-center
+									li
+										a.filter(href='javascript:void(0)', data-filter='all') All
+									li
+										a.filter(href='javascript:void(0)', data-filter='.app') Mobile App
+									li
+										a.filter(href='javascript:void(0)', data-filter='.web') Web Design
+									li
+										a.filter(href='javascript:void(0)', data-filter='.photoshop') Photoshop
+									li
+										a.filter(href='javascript:void(0)', data-filter='.illustrator') Illustrator
+							// /portfolio item filtering
+						// /end col-lg-12
+					// end row
+				// end container
+				// portfolio items
+				.portfolio-item-wrapper.wow.fadeInUp(data-wow-duration='500ms')
+					ul#og-grid.og-grid
+						// single portfolio item
+						li.mix.app
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Azuki bean', data-description='Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Azuki bean
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.web
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Veggies sunt bona vobis', data-description='Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Veggies sunt bona vobis
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.photoshop
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Dandelion horseradish', data-description='Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Dandelion horseradish
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.illustrator
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Dandelion horseradish', data-description='Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Dandelion horseradish
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.app
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Azuki bean', data-description='Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Azuki bean
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.app
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Veggies sunt bona vobis', data-description='Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Veggies sunt bona vobis
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.web
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Dandelion horseradish', data-description='Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Dandelion horseradish
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.photoshop
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Azuki bean', data-description='Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Azuki bean
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.photoshop
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Veggies sunt bona vobis', data-description='Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Veggies sunt bona vobis
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.illustrator
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Veggies sunt bona vobis', data-description='Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Veggies sunt bona vobis
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.web
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Dandelion horseradish', data-description='Cabbage bamboo shoot broccoli rabe chickpea chard sea lettuce lettuce ricebean artichoke earthnut pea aubergine okra brussels sprout avocado tomato.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Dandelion horseradish
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+						// single portfolio item
+						li.mix.app
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Azuki bean', data-description='Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.')
+								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+								.hover-mask
+									h3 Azuki bean
+									span
+										i.fa.fa-plus.fa-2x
+						// /single portfolio item
+					// end og grid
+				// portfolio items wrapper
+			// End section
+			//
+				Start Team Skills
+				===========================================
+			section#team-skills.parallax-section
+				.container
+					.row.wow.fadeInDown(data-wow-duration='500ms')
+						// section title
+						.title.text-center
+							h2
+								| Our 
+								span.color Skills
+							.border
+						// /section title
+						// skill set
+						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
+							.skill-chart.text-center
+								span.chart(data-percent='80')
+									span.percent
+								h3
+									i.fa.fa-wordpress
+									|  Wordpress
+								p
+									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
+						// end skill set
+						// skill set
+						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='200ms')
+							.skill-chart.text-center
+								span.chart(data-percent='90')
+									span.percent 86
+								h3
+									i.fa.fa-html5
+									|  HTML 5
+								p
+									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
+						// end skill set
+						// skill set
+						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='400ms')
+							.skill-chart.text-center
+								span.chart(data-percent='85')
+									span.percent
+								h3
+									i.fa.fa-android
+									|  Android
+								p
+									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
+						// end skill set
+						// skill set
+						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='600ms')
+							.skill-chart.text-center
+								span.chart(data-percent='70')
+									span.percent
+								h3
+									i.fa.fa-apple
+									|  IOS
+								p
+									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
+						// end skill set
+					// End row
+				// End container
+			// End section
+			//
+				Start Our Team
+				===========================================
+			section#our-team
+				.container
+					.row
+						// section title
+						.title.text-center.wow.fadeInUp(data-wow-duration='500ms')
+							h2
+								| Our 
+								span.color Team
+							.border
+						// /section title
+						// team member
+						.col-md-3.col-sm-6.wow.fadeInDown(data-wow-duration='500ms')
+							article.team-mate
+								.member-photo
+									// member photo
+									img.img-responsive(src='images/team/member-1.jpg', alt='Meghna')
+									// /member photo
+									// member social profile
+									.mask
+										ul.clearfix
+											li
+												a(href='#')
+													i.fa.fa-facebook
+											li
+												a(href='#')
+													i.fa.fa-twitter
+											li
+												a(href='#')
+													i.fa.fa-linkedin
+											li
+												a(href='#')
+													i.fa.fa-dribbble
+									// /member social profile
+								// member name & designation
+								.member-title
+									h3 Abul Mal Muhit
+									span CEO/Founder
+								// /member name & designation
+								// about member
+								.member-info
+									p
+										| Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+								// /about member
+						// end team member
+						// team member
+						.col-md-3.col-sm-6.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='200ms')
+							article.team-mate
+								.member-photo
+									// member photo
+									img.img-responsive(src='images/team/member-1.jpg', alt='Meghna')
+									// /member photo
+									// member social profile
+									.mask
+										ul.clearfix
+											li
+												a(href='#')
+													i.fa.fa-facebook
+											li
+												a(href='#')
+													i.fa.fa-twitter
+											li
+												a(href='#')
+													i.fa.fa-linkedin
+											li
+												a(href='#')
+													i.fa.fa-dribbble
+									// /member social profile
+								// member name & designation
+								.member-title
+									h3 Frank Miller
+									span Manager
+								// /member name & designation
+								// about member
+								.member-info
+									p
+										| Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+								// /about member
+						// end team member
+						// team member
+						.col-md-3.col-sm-6.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='400ms')
+							article.team-mate
+								.member-photo
+									// member photo
+									img.img-responsive(src='images/team/member-1.jpg', alt='Meghna')
+									// /member photo
+									// member social profile
+									.mask
+										ul.clearfix
+											li
+												a(href='#')
+													i.fa.fa-facebook
+											li
+												a(href='#')
+													i.fa.fa-twitter
+											li
+												a(href='#')
+													i.fa.fa-linkedin
+											li
+												a(href='#')
+													i.fa.fa-dribbble
+									// /member social profile
+								// member name & designation
+								.member-title
+									h3 Michael Jonson
+									span Web Developer
+								// /member name & designation
+								// about member
+								.member-info
+									p
+										| Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+								// /about member
+						// end team member
+						// team member
+						.col-md-3.col-sm-6.wow.fadeInDown(data-wow-duration='500ms', data-wow-delay='600ms')
+							article.team-mate.kill-margin-bottom
+								.member-photo
+									// member photo
+									img.img-responsive(src='images/team/member-1.jpg', alt='Meghna')
+									// /member photo
+									// member social profile
+									.mask
+										ul.clearfix
+											li
+												a(href='#')
+													i.fa.fa-facebook
+											li
+												a(href='#')
+													i.fa.fa-twitter
+											li
+												a(href='#')
+													i.fa.fa-linkedin
+											li
+												a(href='#')
+													i.fa.fa-dribbble
+									// /member social profile
+								// member name & designation
+								.member-title
+									h3 Mo. Kha. Alamgir
+									span SEO Specialist
+								// /member name & designation
+								// about member
+								.member-info
+									p
+										| Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+								// /about member
+						// end team member
+					// End row
+				// End container
+			// End section
+			//
+				Start Twitter Feed
+				===========================================
+			section#twitter-feed.parallax-section
+				.container
+					.row
+						.col-lg-12.text-center
+							// twitter bird
+							.twitter-bird.wow.fadeInDown(data-wow-duration='500ms')
+								span
+									i.fa.fa-twitter.fa-4x
+							// /twitter bird
+							// fetching tweet
+							.tweet.wow.fadeIn(data-wow-duration='2000ms')
+							// /fetching tweet
+							// follow us button
+							a.btn.btn-transparent.wow.fadeInUp(href='https://twitter.com/amimorshed', title='Follow Us', target='_blank', data-wow-duration='500ms') Follow Us
+							// /follow us button
+					// End row
+				// End container
+			// End section
+			//
+				Start Pricing section
+				===========================================
+			section#pricing.bg-one
+				.container
+					.row
+						// section title
+						.title.text-center.wow.fadeInDown(data-wow-duration='500ms')
+							h2
+								| Our Greatest
+								span.color  Plans
+							.border
+						// /section title
+						// single pricing table
+						article.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInUp(data-wow-duration='200ms')
+							.pricing
+								// plan name & value
+								.price-title
+									h3 Free
+									p
+										| From 
+										strong.value $99
+										|  month
+								// /plan name & value
+								// plan description
+								ul
+									li 1GB Disk Space
+									li 10 Email Account
+									li Script Installer
+									li 1 GB Storage
+									li 10 GB Bandwidth
+									li 24/7 Tech Support
+								// /plan description
+								// signup button
+								a.btn.btn-transparent(href='#') Signup
+								// /signup button
+						// end single pricing table
+						// single pricing table
+						article.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='400ms')
+							.pricing
+								// plan name & value
+								.price-title
+									h3 Silver
+									p
+										| From 
+										strong.value $149
+										|  month
+								// /plan name & value
+								// plan description
+								ul
+									li 1GB Disk Space
+									li 10 Email Account
+									li Script Installer
+									li 1 GB Storage
+									li 10 GB Bandwidth
+									li 24/7 Tech Support
+								// /plan description
+								// signup button
+								a.btn.btn-transparent(href='#') Signup
+								// /signup button
+						// end single pricing table
+						// single pricing table
+						article.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='600ms')
+							.pricing
+								// plan name & value
+								.price-title
+									h3 Gold
+									p
+										| From 
+										strong.value $199
+										|  month
+								// /plan name & value
+								// plan description
+								ul
+									li 1GB Disk Space
+									li 10 Email Account
+									li Script Installer
+									li 1 GB Storage
+									li 10 GB Bandwidth
+									li 24/7 Tech Support
+								// /plan description
+								// signup button
+								a.btn.btn-transparent(href='#') Signup
+								// /signup button
+						// end single pricing table
+						// single pricing table
+						article.col-md-3.col-sm-6.col-xs-12.text-center.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='750ms')
+							.pricing.kill-margin-bottom
+								// plan name & value
+								.price-title
+									h3 Platinum
+									p
+										| From 
+										strong.value $299
+										|  month
+								// /plan name & value
+								// plan description
+								ul
+									li 1GB Disk Space
+									li 10 Email Account
+									li Script Installer
+									li 1 GB Storage
+									li 10 GB Bandwidth
+									li 24/7 Tech Support
+								// /plan description
+								// signup button
+								a.btn.btn-transparent(href='#') Signup
+								// /signup button
+						// end single pricing table
+					// End row
+				// End container
+			// End section
+			//
+				Start Testimonial
+				===========================================
+			section#testimonial.parallax-section
+				.container
+					.row
+						.col-lg-12
+							// section title
+							.sub-title.text-center.wow.fadeInDown(data-wow-duration='500ms')
+								h3 What People Say About Us
+							// /section title
+							// testimonial wrapper
+							#testimonials.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='100ms')
+								// testimonial single
+								.item.text-center
+									// client photo
+									.client-thumb
+										img.img-responsive(src='images/team/client.jpg', alt='Meghna')
+									// /client photo
+									// client info
+									.client-info
+										.client-meta
+											h3 Abul Mal Muhit
+											span Dec 26, 2014
+										.client-comment
+											p
+												| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ex, cupiditate, error, suscipit saepe sed ea consequuntur inventore sequi sit illo.
+											ul.social-profile
+												li
+													a(href='#')
+														i.fa.fa-facebook-square.fa-lg
+												li
+													a(href='#')
+														i.fa.fa-twitter-square.fa-lg
+												li
+													a(href='#')
+														i.fa.fa-linkedin-square.fa-lg
+									// /client info
+								// /testimonial single
+								// testimonial single
+								.item.text-center
+									// client photo
+									.client-thumb
+										img.img-responsive(src='images/team/client.jpg', alt='Meghna')
+									// /client photo
+									// client info
+									.client-info
+										.client-meta
+											h3 Abul Mal Muhit
+											span Dec 26, 2014
+										.client-comment
+											p
+												| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ex, cupiditate, error, suscipit saepe sed ea consequuntur inventore sequi sit illo.
+											ul.social-profile
+												li
+													a(href='#')
+														i.fa.fa-facebook-square.fa-lg
+												li
+													a(href='#')
+														i.fa.fa-twitter-square.fa-lg
+												li
+													a(href='#')
+														i.fa.fa-linkedin-square.fa-lg
+									// /client info
+								// /testimonial single
+								// testimonial single
+								.item.text-center
+									// client photo
+									.client-thumb
+										img.img-responsive(src='images/team/client.jpg', alt='Meghna')
+									// /client photo
+									// client info
+									.client-info
+										.client-meta
+											h3 Abul Mal Muhit
+											span Dec 26, 2014
+										.client-comment
+											p
+												| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ex, cupiditate, error, suscipit saepe sed ea consequuntur inventore sequi sit illo.
+											ul.social-profile
+												li
+													a(href='#')
+														i.fa.fa-facebook-square.fa-lg
+												li
+													a(href='#')
+														i.fa.fa-twitter-square.fa-lg
+												li
+													a(href='#')
+														i.fa.fa-linkedin-square.fa-lg
+									// /client info
+								// /testimonial single
+							// end testimonial wrapper
+						// end col lg 12
+					// End row
+				// End container
+			// End Section
+			//
+				Start Blog Section
+				===========================================
+			section#blog.bg-one
+				.container
+					.row
+						// section title
+						.title.text-center.wow.fadeInDown
+							h2
+								| Latest 
+								span.color Posts
+							.border
+						// /section title
+						.clearfix
+							// single blog post
+							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
+								.note
+									.media-wrapper
+										img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
+									.excerpt
+										h3 Simple Image Post
+										p
+											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
+										a.btn.btn-transparent(href='single-post.html') Read more
+							// /single blog post
+							// single blog post
+							article.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='200ms')
+								.note
+									#gallery-post.media-wrapper
+										.item
+											img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
+										.item
+											img.img-responsive(src='images/blog/bicycle.jpg', alt='Flying bicycle')
+										.item
+											img.img-responsive(src='images/blog/3D-beach-art.jpg', alt='3D Beach Art | Meghna')
+									.excerpt
+										h3 Simple Slider Post
+										p
+											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
+										a.btn.btn-transparent(href='single-post.html') Read more
+							// end single blog post
+							// single blog post
+							article.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='400ms')
+								.note
+									.media-wrapper
+										img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
+									.excerpt
+										h3 Simple Image Post
+										p
+											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
+										a.btn.btn-transparent(href='single-post.html') Read more
+							// end single blog post
+							// single blog post
+							article.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='600ms')
+								.note.kill-margin-bottom
+									.media-wrapper
+										img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
+									.excerpt
+										h3 Simple Image Post
+										p
+											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
+										a.btn.btn-transparent(href='single-post.html') Read more
+							// end single blog post
+						.all-post.text-center
+							a.btn.btn-transparent(href='blog.html') View All Post
+					// end row
+				// end container
+			// end section
+			//
+				Srart Contact Us
+				===========================================
+			section#contact-us
+				.container
+					.row
+						// section title
+						.title.text-center.wow.fadeIn(data-wow-duration='500ms')
+							h2
+								| Get In 
+								span.color Touch
+							.border
+						// /section title
+						// Contact Details
+						.contact-info.col-md-6.wow.fadeInUp(data-wow-duration='500ms')
+							h3 Contact Details
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, vero, provident, eum eligendi blanditiis ex explicabo vitae nostrum facilis asperiores dolorem illo officiis ratione vel fugiat dicta laboriosam labore adipisci.
+							.contact-details
+								.con-info.clearfix
+									i.fa.fa-home.fa-lg
+									span Khaja Road, Bayzid, Chittagong, Bangladesh
+								.con-info.clearfix
+									i.fa.fa-phone.fa-lg
+									span Phone: +880-31-000-000
+								.con-info.clearfix
+									i.fa.fa-fax.fa-lg
+									span Fax: +880-31-000-000
+								.con-info.clearfix
+									i.fa.fa-envelope.fa-lg
+									span Email: hello@meghna.com
+						// / End Contact Details
+						// Contact Form
+						.contact-form.col-md-6.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='300ms')
+							form#contact-form(method='post', action='sendmail.php', role='form')
+								.form-group
+									input#name.form-control(type='text', placeholder='Your Name', name='name')
+								.form-group
+									input#email.form-control(type='email', placeholder='Your Email', name='email')
+								.form-group
+									input#subject.form-control(type='text', placeholder='Subject', name='subject')
+								.form-group
+									textarea#message.form-control(rows='6', placeholder='Message', name='message')
+								#mail-success.success
+									| Thank you. The Mailman is on His Way :)
+								#mail-fail.error
+									| Sorry, don't know what happened. Try later :(
+								#cf-submit
+									input#contact-submit.btn.btn-transparent(type='submit', value='Submit')
+						// ./End Contact Form
+					// end row
+				// end container
+				// Google Map
+				.google-map.wow.fadeInDown(data-wow-duration='500ms')
+					#map-canvas
+				// /Google Map
+			// end section
+			//
+				end Contact Area
+				==========================================
+			footer#footer.bg-one
+				.container
+					.row.wow.fadeInUp(data-wow-duration='500ms')
+						.col-lg-12
+							// Footer Social Links
+							.social-icon
+								ul
+									li
+										a(href='#')
+											i.fa.fa-facebook
+									li
+										a(href='#')
+											i.fa.fa-twitter
+									li
+										a(href='#')
+											i.fa.fa-google-plus
+									li
+										a(href='#')
+											i.fa.fa-youtube
+									li
+										a(href='#')
+											i.fa.fa-linkedin
+									li
+										a(href='#')
+											i.fa.fa-dribbble
+									li
+										a(href='#')
+											i.fa.fa-pinterest
+							// /. End Footer Social Links
+							// copyright
+							.copyright.text-center
+								a(href='index.html')
+									img(src='images/logo-meghna.png', alt='Meghna')
+								br
+								p
+									| Design And Developed by 
+									a(href='https://www.themefisher.com')  Themefisher Team
+									| . Copyright © 2015. All Rights Reserved.
+							// /copyright
+						// end col lg 12
+					// end row
+				// end container
+			// end footer
+			//
+				Back to Top
+				==============================
+			a#scrollUp(href='javascript:;')
+				i.fa.fa-angle-up.fa-2x
+			//
+				end Footer Area
+				==========================================

@@ -28,7 +28,7 @@ Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive,
 
 body {
     background-color: #2B2C30;
-	font-family: 'Ubuntu', 'Arial', sans-serif;
+	font-family: Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
     line-height: 1.5;
     color: #ddd;
 }
@@ -93,6 +93,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-green {
     background-color: #6cb670;
+}
+
+/* Custom button for golden button */
+.btn-gold {
+    background-color:  #E2B364;
 }
 
 .btn-green:focus, 
@@ -246,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     top: 0;
     z-index: 11;
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0,0,0,0.3);
 }
 
 #slitSlider .carousel-caption a {
@@ -260,8 +265,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #slitSlider .carousel-caption h2 {
     color: #FFF;
-    font-family: Oswald, sans-serif;
-    font-size: 70px;
+    font-family:  Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
+    font-size: 80px;
     font-weight: 700;
     margin-bottom: 40px;
     text-transform: uppercase;
@@ -269,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #slitSlider .carousel-caption h3 {
     color: #FFF;
-    font-family: Oswald, sans-serif;
+    font-family: Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 59px;
@@ -303,7 +308,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 26px;
     padding: 20px 15px;
 
@@ -1619,4 +1624,17 @@ blockquote {
 .form-group:last-child input {
   margin: 0;
 }
+
+/* Custom additions */
+
+.boxed {
+    border: 2px solid #6cb670;
+
+}
+
+.boxed p {
+   margin: 15px;
+   font-size: 16px;
+}
+
                             

@@ -462,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #services .title {
-    padding-bottom: 125px;
+    padding-bottom: 0px; /*original 125*/
 }
 
 .service-block {
@@ -634,7 +634,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #team-skills {
     padding: 70px 0;
-    background-image: url(../images/parallax/skills.jpg);
+    background-image: url(../images/parallax/nightdark.jpg);
 }
 
 .skill-chart > h3 {
@@ -797,16 +797,45 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*=================================================================
-	Twitter Feed
+	Join section (originally tweet)
 ==================================================================*/
 
-#twitter-feed {
-	background-image: url("../images/parallax/twitter.jpg");
+/*#twitter-feed {*/
+/*	background-image: url("../images/parallax/twitter.jpg");*/
+/*	padding-bottom: 100px;*/
+/*	padding-top: 80px;*/
+/*}*/
+
+/*.twitter-bird span {*/
+/*    border: 2px solid #6cb670;*/
+/*    border-radius: 50px;*/
+/*    color: #6cb670;*/
+/*    display: inline-block;*/
+/*    margin-bottom: 50px;*/
+/*    height: 90px;*/
+/*    width: 90px;*/
+/*}*/
+
+/*.twitter-bird span i {*/
+/*    line-height: 90px;*/
+/*}*/
+
+/*.tweet {*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.tweet a {*/
+/*    color: #6cb670;*/
+/*}*/
+
+
+#joinus {
+	background-image: url("../images/parallax/nightdark.jpg");
 	padding-bottom: 100px;
 	padding-top: 80px;
 }
 
-.twitter-bird span {
+.joinus-logo span {
     border: 2px solid #6cb670;
     border-radius: 50px;
     color: #6cb670;
@@ -816,17 +845,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 90px;
 }
 
-.twitter-bird span i {
+.joinus-logo span i {
     line-height: 90px;
 }
 
-.tweet {
-    margin-bottom: 10px;
-}
-
-.tweet a {
-    color: #6cb670;
-}
 
 /*=================================================================
 	Pricing section
@@ -1629,12 +1651,43 @@ blockquote {
 
 .boxed {
     border: 2px solid #6cb670;
+    max-height: 300px;
+    overflow-y: scroll;
 
 }
 
 .boxed p {
-    margin: 15px;
+    margin: 25px;
     font-size: 16px;
 }
 
-                            
+/*=================================================================
+	Modal Styling 
+==================================================================*/
+
+.modal-header {
+    background-color: #2B2C30;
+    color: #6CB570;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 32px;
+}
+
+.modal-body {
+    background-color:  #303136;
+}
+
+.modal-footer {
+    background-color: #2B2C30;
+}
+
+
+.btn-join {
+    border-color: #6CB570;
+}
+
+.join-form {
+    background-color: #6CB570;
+}

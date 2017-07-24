@@ -311,23 +311,21 @@ block content
 							// section title
 							.title.text-center
 								h2
-									| Our 
-									span.color Works
+									| お 
+									span.color 例
 								.border
 							// /section title
 							// portfolio item filtering
 							.portfolio-filter.clearfix
 								ul.text-center
 									li
-										a.filter(href='javascript:void(0)', data-filter='all') All
+										a.filter(href='javascript:void(0)', data-filter='all') 基準
 									li
-										a.filter(href='javascript:void(0)', data-filter='.app') Mobile App
+										a.filter(href='javascript:void(0)', data-filter='.app') 絶対駄目
 									li
-										a.filter(href='javascript:void(0)', data-filter='.web') Web Design
+										a.filter(href='javascript:void(0)', data-filter='.web') 提案
 									li
-										a.filter(href='javascript:void(0)', data-filter='.photoshop') Photoshop
-									li
-										a.filter(href='javascript:void(0)', data-filter='.illustrator') Illustrator
+										a.filter(href='javascript:void(0)', data-filter='.photoshop') 新言葉
 							// /portfolio item filtering
 						// /end col-lg-12
 					// end row
@@ -337,12 +335,13 @@ block content
 					ul#og-grid.og-grid
 						// single portfolio item
 						li.mix.app
-							a(href='javascript:void(0)', data-largesrc='images/portfolio/portx1.jpg', data-title='Azuki bean', data-description='Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.')
-								img(src='images/portfolio/portx1.jpg', alt='Meghna')
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/escalator.png', data-title='escalator', data-description='escalator')
+								img(src='images/portfolio/escalator.png', alt='escalator')
 								.hover-mask
-									h3 Azuki bean
+									.twister 
+										h3 自動階段
 									span
-										i.fa.fa-plus.fa-2x
+										i.fa.fa-thumbs-o-up.fa-2x
 						// /single portfolio item
 						// single portfolio item
 						li.mix.web
@@ -445,68 +444,36 @@ block content
 						// /single portfolio item
 					// end og grid
 				// portfolio items wrapper
-				.row.col-lg-12(style="margin:20px;")
-					.col-lg-4.col-md-4.col-sm-4
-						input#dict_field(type='text', placeholder='外来語を入力', name='dict_field', style=" vertical-align:middle; margin-right: 20px; color:#333439; font-size:16px")
-						
-						button#translate_btn.btn.btn-transparent.btn-join(type ='button' title='検索', style=" margin-top: 0px; vertical-align:middle; font-size:16px") 検索
 			// End section
 			//
 				Start Team Skills
 				===========================================
 			section#team-skills.parallax-section
-				.container
+				.container.text-center
 					.row.wow.fadeInDown(data-wow-duration='500ms')
 						// section title
 						.title.text-center
 							h2
-								| Our 
-								span.color Skills
+								| 外日
+								span.color辞書
 							.border
 						// /section title
 						// skill set
-						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
-							.skill-chart.text-center
-								span.chart(data-percent='80')
-									span.percent
-								h3
-									i.fa.fa-wordpress
-									|  Wordpress
-								p
-									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
-						// end skill set
-						// skill set
-						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='200ms')
-							.skill-chart.text-center
-								span.chart(data-percent='90')
-									span.percent 86
-								h3
-									i.fa.fa-html5
-									|  HTML 5
-								p
-									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
-						// end skill set
-						// skill set
-						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='400ms')
-							.skill-chart.text-center
-								span.chart(data-percent='85')
-									span.percent
-								h3
-									i.fa.fa-android
-									|  Android
-								p
-									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
-						// end skill set
-						// skill set
-						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='600ms')
-							.skill-chart.text-center
-								span.chart(data-percent='70')
-									span.percent
-								h3
-									i.fa.fa-apple
-									|  IOS
-								p
-									| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
+					.row.wow.fadeInDown(data-wow-duration='500ms')
+						input#dict_field.col-lg-4.col-lg-offset-4(type='text', placeholder='外来語を入力', name='dict_field', style="padding:5px; color:#333439; font-size:16px")
+					.row.wow.fadeInDown(data-wow-duration='500ms')
+						button#translate_btn.btn.btn-transparent.btn-join(type ='button' title='検索', style=" margin-top: 20px; vertical-align:middle; font-size:16px") 検索
+					.row.wow.fadeInDown(data-wow-duration='500ms')
+						input#translation.col-lg-4.col-lg-offset-4(type='text', readonly, name='translation', style="margin-top: 20px; padding:5px; color:#333439; font-size:16px")
+					// .col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
+					// 	.skill-chart.text-center
+					// 			span.chart(data-percent='80')
+					// 				span.percent
+					// 			h3
+					// 				i.fa.fa-wordpress
+					// 				|  Wordpress
+					// 			p
+					// 				| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
 						// end skill set
 					// End row
 				// End container

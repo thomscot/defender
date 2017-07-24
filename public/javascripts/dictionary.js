@@ -1,7 +1,8 @@
 $(document).ready(function(){
   
-  // At page ready clear the value in #dict_form
+  // At page ready clear the value in the translation fields
   $("#dict_field").val("");
+  $("#translation").val("");
   
   
 });
@@ -11,14 +12,14 @@ $(document).ready(function(){
   Split it by new line, and create an object [word:translation]
 */
 $.ajax({
-        url: "../data/test.csv",
+        url: "../data/gaini_dictionary.csv",
         // async: false,   // asynchronous request? 
         cache: false,   // force the browser to not make cache of the retrieved data
         dataType: "text",  
         success: function( data, textStatus, jqXHR ) {
                 var dictionary = data.split('\n')
                 .map(function(x) { return x.split(',') })
-                .reduce(function(acc, pair) { 
+                .reduce(function(acc, pair) { // acc = accumulator
                                             acc[pair[0]] = pair[1];
                                             return acc }, {});
                 /* 
@@ -29,10 +30,10 @@ $.ajax({
                 $('#translate_btn').click(function(){
                     var word = $('#dict_field').val();
                     if (word in dictionary) {
-                      $('#dict_field').val(dictionary[word])
+                      $('#translation').val(dictionary[word])
                     }
                     else {
-                       $('#dict_field').val("入力された言葉が見つかれません")
+                       $('#translation').val("入力された言葉が見つかれません")
                       }
                 });
         },

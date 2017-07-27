@@ -4,7 +4,6 @@ $(document).ready(function(){
   $("#dict_field").val("");
   $("#translation").val("");
   
-  
 });
 
 /*

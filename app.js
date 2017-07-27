@@ -1,43 +1,82 @@
-/*
- * Module dependencies (DEFAULT)
- */
-
+/*******************************
+ * Module dependencies default *
+ *******************************/
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
+  , routes = require('./routes/index')
+  , users = require('./routes/users')
   , path = require('path');
-  
-/**
- * Module dependencies (ADDED)
- */
-// Serves latest bootstrap version to express apps 
-var bootstrap = require('express-bootstrap-service');
+/*******************************
+ * Module dependencies (added) *
+ *******************************/
+var bootstrap = require('express-bootstrap-service')
+ , mongo = require('mongodb')
+ , monk = require('monk')
+ , db = monk('localhost:27017/defender')
+ , favicon = require('serve-favicon')
+ , logger = require('morgan')
+ , cookieParser = require('cookie-parser')
+ , bodyParser = require('body-parser');
 
 var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.favicon());
-// for bootstrap
+
+/******************
+ *app.use section *
+ ******************/
+ 
 app.use(bootstrap.serve);
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(app.router);
+// uncomment after placing your favicon in /public
+//app.use(favicon(dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// Make our db accessible to our router
+// we're adding the object db (monk connection) to every HTTP req the app makes
+// TODO: maybe not optimal
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
+
+app.use('/', routes);
+app.use('/users', users);
 
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+// catch 404 and forwarding to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+/*****************
+* ERROR HANDLERS *
+******************/
+
+// development error handler (print stacktrace)
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
-
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+// production error handler (no stacktraces leaked to user)
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
+
+module.exports = app;

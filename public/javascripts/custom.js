@@ -165,11 +165,13 @@ jQuery(function ($) { "use strict";
 	/*	Twitter Feed
 	/* ========================================================================= */
 	
-	$(".tweet").twittie({
-        dateFormat: "%b. %d, %Y",
-        template: "{{tweet}}",
-        count: 1
-    });
+	// Removed dependancy from twittie.js for now
+		
+	// $(".tweet").twittie({
+	//       dateFormat: "%b. %d, %Y",
+	//       template: "{{tweet}}",
+	//       count: 1
+	//   });
 
 
 	/* ========================================================================= */

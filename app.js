@@ -3,7 +3,7 @@
  *******************************/
 var express = require('express')
   , routes = require('./routes/index')
-  , users = require('./routes/users')
+  , members = require('./routes/members')
   , path = require('path');
 /*******************************
  * Module dependencies (added) *
@@ -45,7 +45,7 @@ app.use(function(req,res,next){
 });
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/members', members);
 
 
 // catch 404 and forwarding to error handler

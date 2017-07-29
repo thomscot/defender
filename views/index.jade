@@ -849,11 +849,11 @@ block content
 			// 
 					Modal Code
 					==============================================
-			#join_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='join_modal')
+			#join_modal.modal.fade(tabindex='-1', role='dialog', data-backdrop = "static", aria-labelledby='join_modal')
 				.modal-dialog(role='document')
 					.modal-content
 						.modal-header
-							button.close(type='button', data-dismiss='modal', aria-label='Close')
+							button.close(type='button', data-dismiss='modal', aria-label='Close', onclick='clearFields()')
 								span(aria-hidden='true') 閉
 							h4#myModalLabel.modal-title 日本語擁護協会入会
 						.modal-body
@@ -883,5 +883,5 @@ block content
 										| 女
 	
 						.modal-footer
-							button.btn.btn-default(type='button', data-dismiss='modal') 中止
+							button#join_cancel.btn.btn-default(type='button', data-dismiss='modal', onclick='clearFields()') 中止
 							button#join_btn.btn.btn-transparent.btn-join(type='button') 入会する

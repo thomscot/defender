@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
+  // Just in case clear all the join form fields on refresh
+   $('#join_form input').val('');
 
   // Add new member to db when join_btn is clicked
-  $('#join_btn').click(function(){
+  $('#join_btn').click(function(event){
     event.preventDefault(); // find out why this
     
     // var test = $('input[name="sex-radio"]:checked').val();
@@ -14,18 +16,17 @@ $(document).ready(function() {
       var radioValue = $(this).attr("id");
       gender = $("label[for='"+radioValue+"']").text();
     });
-    
-    alert(gender)
+
     // Very basic validation (only empty fields). TODO: make better validation.
     var errorCount = 0;
-    $('#join_form input').each(function(index,val){
+    $('#join_form input').not(':radio').each(function(index,val){
       if ($(this).val() === '') {
         errorCount++;
       }
     });
     
-    if(errorCount===0 && gender!==''){
-      
+    if(errorCount===0 && (gender==='男' || gender==='女')){
+
       var newMember = {
                       'namekanji': $('#join_form input#join_name_kanji').val(),
                       'namekana': $('#join_form input#join_name_kana').val(),
@@ -61,11 +62,14 @@ $(document).ready(function() {
       alert("全ての項目は必須で御座います。")
     }
       
-
-    
-    
   // /join_btn Click
   });
+  
+  
 // /DOM READY
 });
 
+// Clear join_form fields
+function clearFields(){
+   $('#join_form input').val('');
+}

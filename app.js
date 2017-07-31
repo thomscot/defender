@@ -2,8 +2,8 @@
  * Module dependencies default *
  *******************************/
 var express = require('express')
-  , routes = require('./routes/index')
-  , members = require('./routes/members')
+  , indexController = require('./routes/index')
+  , membersController = require('./routes/members')
   , path = require('path');
 /*******************************
  * Module dependencies (added) *
@@ -15,7 +15,8 @@ var bootstrap = require('express-bootstrap-service')
  , favicon = require('serve-favicon')
  , logger = require('morgan')
  , cookieParser = require('cookie-parser')
- , bodyParser = require('body-parser');
+ , bodyParser = require('body-parser')
+ , expressValidator = require('express-validator');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(bootstrap.serve);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator())
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // Make our db accessible to our router
@@ -44,8 +46,9 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use('/', routes);
-app.use('/members', members);
+
+app.use('/', indexController);
+app.use('/members', membersController);
 
 
 // catch 404 and forwarding to error handler

@@ -648,7 +648,7 @@ block content
 						// section title
 						.title.text-center
 							h2(style="margin-bottom:-35px;")
-								| 入 
+								| 入
 								.joinus-logo.wow.fadeInDown(data-wow-duration='500ms' style="display:inline-block;")
 									span
 										i.fa.fa-language(style=" vertical-align: middle;")
@@ -657,12 +657,12 @@ block content
 							.col-lg-12.text-center
 							// /section title
 							
-							p 
+							p
 								| それは毎晩のところのどう前のうちに許しじまし。ばかも譜にごこどもへのきて実にめいめいを明けて何とかこんどなっせないうちが出しただ。
-								
+							
 							// join us button
 							a.btn.btn-transparent.wow.fadeInUp(title='入会する', target='_blank', data-wow-duration='500ms', data-toggle="modal", data-target="#join_modal") 入会する
-							// /join us button
+						// /join us button
 					// End row
 				// End container
 			// End section
@@ -857,23 +857,23 @@ block content
 								span(aria-hidden='true') 閉
 							h4#myModalLabel.modal-title 日本語擁護協会入会
 						.modal-body
-							form#join_form(method='post', action='', role='form')
+							form#join_form(role='form')
 								.form-group
 									.row
-										.col-lg-6.col-md-6
-											input#join_name_kanji.form-control(type='text', placeholder='お名前[漢字]', name='name_kanji', style='background-color:#808080;')
+										.col-lg-6.col-md-6.col-sm-6.col-xs-6
+											input#join_name_kanji.form-control(type='text', placeholder='お名前[漢字]', name='join_name_kanji', style='background-color:#808080;')
 											br
-										.col-lg-6.col-md-6
+										.col-lg-6.col-md-6.col-sm-6.col-xs-6
 											input#join_name_kana.form-control(type='text', placeholder='お名前[かな]', name='name_kana', style='background-color:#808080;')
 											br
 									input#join_email.form-control(type='email', placeholder='電子郵便', name='email', style='background-color:#808080;')
 									br
 									input#email_confirmation.form-control(type='email', placeholder='電子郵便確認', name='email_confirmation', style='background-color:#808080;')
 								.row
-									.col-lg-6.col-md-6
-										input#join-location.form-control(type='text', placeholder='位置', name='location', style='background-color:#808080;')
-									.col-lg-2.col-md-2.col-lg-offset-2.col-md-offset-2
-										input#join-age.form-control(type='number' min='0' max="120" placeholder='年齢', name='age', style='background-color:#808080;')
+									.col-lg-6.col-md-6.col-sm-6.col-xs-5
+										input#join_location.form-control(type='text', placeholder='位置', name='location', style='background-color:#808080;')
+									.col-lg-2.col-md-2.col-sm-2.col-xs-3.col-lg-offset-2.col-md-offset-2.col-sm-offset-2.col-xs-offset-1
+										input#join_age.form-control(type='number' min='0' max="120" placeholder='年齢', name='age', style='background-color:#808080;')
 								
 									label.radio-inline(for="male-radio" style='margin-top:5px')
 										input#male-radio(type='radio', name='sex-radio')
@@ -881,7 +881,12 @@ block content
 									label.radio-inline(for="female-radio" style='margin-top:5px')
 										input#female-radio(type='radio', name='sex-radio')
 										| 女
-	
+												
 						.modal-footer
+							ul#error_list(style="color:red")
+								if errors
+									h3 THERE ARE ERRORS
+									each error, i in errors
+										li #{error.msg}
 							button#join_cancel.btn.btn-default(type='button', data-dismiss='modal', onclick='clearFields()') 中止
 							button#join_btn.btn.btn-transparent.btn-join(type='button') 入会する

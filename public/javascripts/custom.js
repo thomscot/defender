@@ -288,8 +288,8 @@ jQuery(function ($) { "use strict";
 
 	function initialize() {
 
-		var myLatLng = new google.maps.LatLng(22.333851, 91.812256);
-
+		var mapCenter = new google.maps.LatLng(38, 130.22);
+		var tokyoCoordinates = new google.maps.LatLng(35.662835, 139.740667)
 		var roadAtlasStyles = [{
 			"featureType": "landscape",
 			"elementType": "geometry.fill",
@@ -361,14 +361,14 @@ jQuery(function ($) { "use strict";
 		}];
 
 		var mapOptions = {
-			zoom: 14,
-			center: myLatLng,
-			disableDefaultUI: true,
+			zoom: 6,
+			center: mapCenter,
+			disableDefaultUI: false,
 			scrollwheel: false,
 			navigationControl: false,
 			mapTypeControl: false,
 			scaleControl: false,
-			draggable: false,
+			draggable: true,
 			mapTypeControlOptions: {
 				mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'roadatlas']
 			}
@@ -378,13 +378,13 @@ jQuery(function ($) { "use strict";
 
 
 		var marker = new google.maps.Marker({
-			position: myLatLng,
+			position: tokyoCoordinates,
 			map: map,
 			icon: 'images/location-icon.png',
-			title: '',
+			title: '本部',
 		});
 
-
+		//TODO: infowindow is not defined. Find out where it came from
 		google.maps.event.addListener(marker, 'click', function () {
 			infowindow.open(map, marker);
 		});

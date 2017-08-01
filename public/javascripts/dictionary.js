@@ -1,9 +1,23 @@
+/**************************************************************************
+* This js deals with everything related to the #gaini-dictionary section. *
+* The user inputs a word in the search box and on btn click a translation *
+* is shown in flipping flashcard-like div.                                
+***************************************************************************/
+
 $(document).ready(function(){
   
   // At page ready clear the value in the translation fields
   $("#dict_field").val("");
   $("#translation").val("");
+
   
+  // While writing in the search box, write on the front of the flashcard
+  $("#dict_field").keyup(function(event) {
+      var dict_input = $(this).val();
+      $("#print_dict_input").text(dict_input);
+  });
+  
+
 });
 
 /*
@@ -22,18 +36,23 @@ $.ajax({
                                             acc[pair[0]] = pair[1];
                                             return acc }, {});
                 /* 
-                 When #translate_btn is clicked, uses the input as the dict key to translat
+                 When #translate_btn is clicked, uses the input as the dict key to translate
                  Given a word returns the translation in the dictionary {loan_word:japanese_word}
                  Example: translate('クラス') = 授業
                 */
                 $('#translate_btn').click(function(){
+                  
                     var word = $('#dict_field').val();
                     if (word in dictionary) {
-                      $('#translation').val(dictionary[word])
+                      $('#translation').text(dictionary[word])
                     }
                     else {
-                       $('#translation').val("入力された言葉が見つかれません")
+                       $('#translation').text("入力された言葉が見つかりません。")
                       }
+                    // then flip the flashcard
+                    $('.flashcard').toggleClass('flipped');
+                    // and swap front/back IDs.
+                    swapFrontBack();
                 });
         },
         error: function(){
@@ -42,3 +61,11 @@ $.ajax({
         
         
 });
+
+
+function swapFrontBack(){
+  var front = $('#print_dict_input')
+  var back = $('#translation')
+  front.attr('id', 'translation')
+  back.attr('id', 'print_dict_input')
+}

@@ -1661,7 +1661,7 @@ blockquote {
     font-size: 16px;
 }
 
-.flashcard h3 {
+.flashcard_hover h3 {
     color: #6cb670;
     font-size: 50px;
 }
@@ -1695,4 +1695,50 @@ blockquote {
 
 .join-form {
     background-color: #6CB570;
+}
+
+/*=================================================================
+	Flashcard for dictionary search 
+==================================================================*/
+
+.stage {
+-webkit-perspective: 1000;  /* Sets up your viewpoint for seeing the animation */
+}
+
+.flashcard {
+  height: 300px;  
+  width: 500px; 
+  margin: 3% auto;  /* Centers the flashcard on the page */
+  border: 1px solid gray; /*  Border makes the animation easier to see. */
+  box-shadow: 5px 5px 5px #000;
+  -webkit-transform-style: preserve-3d;  /* Provides 3D perspective. */
+  transition: all 0.3s; /* Slows down any transitions (e.g. rotation) */
+  background-color: #6CB570;
+  -webkit-transition: all 0.3s;
+}
+
+.flipped, .back {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg); /* Rotates flashcard div when applied */
+}
+
+.front, .back {
+  position: absolute;                    
+  -webkit-backface-visibility: hidden;  /*  Hides back side of text (it's upside down) */
+  height: 300px; /* Stretches side to inhabit full size of flashcard */
+  width: 500px;
+  text-align: center;                                                  
+}
+
+.front p {
+  margin-top:25%;
+  vertical-align: center;
+  font-size: 4em;
+}
+
+.back p {
+  font-size: 4em;
+  margin-top:25%;
+  margin-bottom:25%;
+   vertical-align: center;
 }

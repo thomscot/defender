@@ -338,7 +338,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/escalator_border.png', data-title='escalator', data-description='escalator')
 								img(src='images/portfolio/escalator_border.png', alt='escalator')
 								.hover-mask
-									.flashcard 
+									.flashcard_hover 
 										h3 自動階段
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -348,7 +348,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/class_border.png', data-title='class', data-description='class')
 								img(src='images/portfolio/class_border.png', alt='class')
 								.hover-mask
-									.flashcard 
+									.flashcard_hover 
 										h3 授業
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -358,17 +358,17 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/commitment_border.png', data-title='commitment', data-description='commitment')
 								img(src='images/portfolio/commitment_border.png', alt='commitment')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 約束・集中
 									span
-										i.fa.fa-plus.fa-2x
+										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
 						li.mix.photoshop
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/member_border.png', data-title='member', data-description='member')
 								img(src='images/portfolio/member_border.png', alt='member')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 会員
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -378,7 +378,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/evidence_border.png', data-title='evidence', data-description='evidence')
 								img(src='images/portfolio/evidence_border.png', alt='evidence')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 証拠・確証
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -388,7 +388,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/share_border.png', data-title='share', data-description='share')
 								img(src='images/portfolio/share_border.png', alt='share')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 共有
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -398,7 +398,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/user_border.png', data-title='user', data-description='user')
 								img(src='images/portfolio/user_border.png', alt='user')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 利用者
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -408,7 +408,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/bedroom_border.png', data-title='bedroom', data-description='bedroom')
 								img(src='images/portfolio/bedroom_border.png', alt='bedroom')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 寝室
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -418,7 +418,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/advice_border.png', data-title='advice', data-description='advice')
 								img(src='images/portfolio/advice_border.png', alt='advice')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 助言
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -428,7 +428,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/document_border.png', data-title='document', data-description='document')
 								img(src='images/portfolio/document_border.png', alt='document')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 書類・資料
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -438,7 +438,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/event_border.png', data-title='event', data-description='event')
 								img(src='images/portfolio/event_border.png', alt='event')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 行事・催し
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -448,7 +448,7 @@ block content
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/aircon_border.png', data-title='aircon', data-description='aircon')
 								img(src='images/portfolio/aircon_border.png', alt='aircon')
 								.hover-mask
-									.flashcard
+									.flashcard_hover
 										h3 空調機
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
@@ -469,13 +469,21 @@ block content
 								span.color辞書
 							.border
 						// /section title
-						// skill set
+					// dictionary input and search button
 					.row.wow.fadeInDown(data-wow-duration='500ms')
-						input#dict_field.col-lg-4.col-lg-offset-4(type='text', placeholder='外来語を入力', name='dict_field', style="padding:5px; color:#333439; font-size:16px")
+						input#dict_field.col-lg-4.col-lg-offset-4(type='text', placeholder='外来語を入力', name='dict_field', maxlength='10', style="padding:5px; color:#333439; font-size:16px")
 					.row.wow.fadeInDown(data-wow-duration='500ms')
 						button#translate_btn.btn.btn-transparent.btn-join(type ='button' title='検索', style=" margin-top: 20px; vertical-align:middle; font-size:16px") 検索
-					.row.wow.fadeInDown(data-wow-duration='500ms')
-						input#translation.col-lg-4.col-lg-offset-4(type='text', readonly, name='translation', style="margin-top: 20px; padding:5px; color:#333439; font-size:16px")
+					// Flashcard section
+					.stage
+						.flashcard
+							.front
+								p#print_dict_input
+							.back
+								p#translation
+					// /Flashcard section
+					
+					// /single flashcard item
 					// .col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
 					// 	.skill-chart.text-center
 					// 			span.chart(data-percent='80')

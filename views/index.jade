@@ -471,29 +471,41 @@ block content
 						// /section title
 					// dictionary input and search button
 					.row.wow.fadeInDown(data-wow-duration='500ms')
-						input#dict_field.col-lg-4.col-lg-offset-4(type='text', placeholder='外来語を入力', name='dict_field', maxlength='10', style="padding:5px; color:#333439; font-size:16px")
+						input#dict_field.col-lg-4.col-lg-offset-4.col-md-4.col-md-offset-4(type='text', placeholder='外来語を入力', name='dict_field', maxlength='10', style="padding:5px; color:#333439; font-size:16px")
 					.row.wow.fadeInDown(data-wow-duration='500ms')
 						button#translate_btn.btn.btn-transparent.btn-join(type ='button' title='検索', style=" margin-top: 20px; vertical-align:middle; font-size:16px") 検索
 					// Flashcard section
-					.stage
-						.flashcard
-							.front
-								p#print_dict_input
-							.back
-								p#translation
+					.row.wow.fadeInDown(data-wow-duration='500ms')
+						.stage
+							.flashcard
+								.front
+									p#print_dict_input
+								.back
+									p#translation
 					// /Flashcard section
-					
-					// /single flashcard item
-					// .col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
-					// 	.skill-chart.text-center
-					// 			span.chart(data-percent='80')
-					// 				span.percent
-					// 			h3
-					// 				i.fa.fa-wordpress
-					// 				|  Wordpress
-					// 			p
-					// 				| Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.
-						// end skill set
+					// percentage items. Lifted up to look like on the above row.
+					.row(style="margin-top: -30%")
+						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
+							.skill-chart
+									span.chart(data-percent='80')
+										span.percent
+									h3
+										i.fa.fa-book
+										|  ？
+									p
+										| それは毎晩のところのどう前のうちに許しじまし。
+						// /percentage item
+						// percentage item
+						.col-md-3.col-sm-6.col-xs-12.col-lg-offset-6.col-md-offset-6.wow.fadeInUp(data-wow-duration='500ms')
+							.skill-chart
+									span.chart(data-percent='40')
+										span.percent
+									h3
+										i.fa.fa-book
+										|  辞書完成率
+									p
+										| それは毎晩のところのどう前のうちに許しじまし。
+						// /percentage item
 					// End row
 				// End container
 			// End dictionary section

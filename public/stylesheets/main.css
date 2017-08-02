@@ -1706,17 +1706,16 @@ blockquote {
 }
 
 .flashcard {
-  height: 300px;  
-  width: 500px; 
+  height: 250px;  
+  width: 400px; 
   margin: 3% auto;  /* Centers the flashcard on the page */
   border: 1px solid gray; /*  Border makes the animation easier to see. */
   box-shadow: 5px 5px 5px #000;
   -webkit-transform-style: preserve-3d;  /* Provides 3D perspective. */
   transition: all 0.3s; /* Slows down any transitions (e.g. rotation) */
-  background-color: #6CB570;
+  background-color: rgba(108, 181, 112, 0.8);
   -webkit-transition: all 0.3s;
 }
-
 .flipped, .back {
   transform: rotateX(180deg);
   -webkit-transform: rotateX(180deg); /* Rotates flashcard div when applied */
@@ -1725,20 +1724,68 @@ blockquote {
 .front, .back {
   position: absolute;                    
   -webkit-backface-visibility: hidden;  /*  Hides back side of text (it's upside down) */
-  height: 300px; /* Stretches side to inhabit full size of flashcard */
-  width: 500px;
+  height: 250px; /* Stretches side to inhabit full size of flashcard */
+  width: 400px;
   text-align: center;                                                  
 }
 
-.front p {
-  margin-top:25%;
-  vertical-align: center;
-  font-size: 4em;
+.front, .back p {
+  margin-top:20%;
+  margin-bottom:20%;
+  font-size: 3.2em;
 }
 
-.back p {
-  font-size: 4em;
-  margin-top:25%;
-  margin-bottom:25%;
-   vertical-align: center;
+
+/*
+* Fixes for smaller devices
+/*
+
+/* To avoid overlapping of dict flashcard with percentage bars */
+@media(max-width:1000px){
+    
+    .stage{
+        -webkit-perspective: 1000;
+         margin-bottom:35%;
+        }
+}
+
+/* On mobiles reduce the size of the flashcard */
+@media(max-width:420px){
+    
+    .stage{
+        -webkit-perspective: 1000;
+         margin-bottom:35%;
+    }
+
+    .flashcard {
+      height: 200px;  
+      width: 300px; 
+      margin: 3% auto;  /* Centers the flashcard on the page */
+      border: 1px solid gray; /*  Border makes the animation easier to see. */
+      box-shadow: 5px 5px 5px #000;
+      -webkit-transform-style: preserve-3d;  /* Provides 3D perspective. */
+      transition: all 0.3s; /* Slows down any transitions (e.g. rotation) */
+      background-color: rgba(108, 181, 112, 0.8);
+      -webkit-transition: all 0.3s;
+    }
+    .flipped, .back {
+      transform: rotateX(180deg);
+      -webkit-transform: rotateX(180deg); /* Rotates flashcard div when applied */
+    }
+    
+    .front, .back {
+      position: absolute;                    
+      -webkit-backface-visibility: hidden;  /*  Hides back side of text (it's upside down) */
+      height: 200px; /* Stretches side to inhabit full size of flashcard */
+      width: 300px;
+      text-align: center;                                                  
+    }
+    
+    .front, .back p {
+      margin-top:21%;
+      margin-bottom:21%;
+      font-size: 2em;
+    }
+
+    
 }

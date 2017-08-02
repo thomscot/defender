@@ -47,7 +47,10 @@ $.ajax({
                       $('#translation').text(dictionary[word])
                     }
                     else {
-                       $('#translation').text("入力された言葉が見つかりません。")
+                      var result = "入力された言葉が\n見つかりません。";
+                       $('#translation').text(result)
+                       // turn /n into <br> in html 
+                       $('#translation').html($('#translation').text().replace(/\n\r?/g, '<br />'));
                       }
                     // then flip the flashcard
                     $('.flashcard').toggleClass('flipped');

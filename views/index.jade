@@ -681,7 +681,7 @@ block content
 								| それは毎晩のところのどう前のうちに許しじまし。ばかも譜にごこどもへのきて実にめいめいを明けて何とかこんどなっせないうちが出しただ。
 							
 							// join us button
-							a.btn.btn-transparent.wow.fadeInUp(title='入会する', target='_blank', data-wow-duration='500ms', data-toggle="modal", data-target="#join_modal") 入会する
+							a.btn.btn-transparent.wow.fadeInUp(title='入会書', target='_blank', data-wow-duration='500ms', data-toggle="modal", data-target="#join_modal") 入会書表示
 						// /join us button
 					// End row
 				// End container
@@ -866,8 +866,12 @@ block content
 				end Footer Area
 				==========================================
 			
+
+			// MODAL WINDOWS. TODO: move everything to separate file?
+
+
 			// 
-					Modal Code
+					Join us Modal window
 					==============================================
 			#join_modal.modal.fade(tabindex='-1', role='dialog', data-backdrop = "static", aria-labelledby='join_modal')
 				.modal-dialog(role='document')
@@ -875,7 +879,7 @@ block content
 						.modal-header
 							button.close(type='button', data-dismiss='modal', aria-label='Close', onclick='clearFields()')
 								span(aria-hidden='true') 閉
-							h4#myModalLabel.modal-title 日本語擁護協会入会
+							h4.modal-title 日本語擁護協会入会
 						.modal-body
 							form#join_form(role='form')
 								.form-group
@@ -910,3 +914,19 @@ block content
 										li #{error.msg}
 							button#join_cancel.btn.btn-default(type='button', data-dismiss='modal', onclick='clearFields()') 中止
 							button#join_btn.btn.btn-transparent.btn-join(type='button') 入会する
+
+			// 
+				New member success!
+				==============================================
+			#join_success.modal.fade(tabindex='-1', role='dialog', data-backdrop = "static", aria-labelledby='join_success')
+				.modal-dialog(role='document')
+					.modal-content
+						.modal-header
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') 閉
+							h4.modal-title 入会確認
+						.modal-body
+							p.text-center(style="font-size:20px")
+								| 無事に入会しました。有難う御座います。
+						.modal-footer
+							button#join_success_close.btn.btn-default(type='button', data-dismiss='modal') 閉じる

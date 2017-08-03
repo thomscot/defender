@@ -37,8 +37,7 @@ function validator(req, res, next) {
   req.checkBody('location', 'insert location').notEmpty();
   req.checkBody('age', 'insert age').notEmpty();
   req.checkBody('sex', 'insert gender').notEmpty();
-  //TODO: req.validationErrors() may be removed in a future version. 
-  // Use req.getValidationResult() instead.
+  //TODO: req.validationErrors() may be removed in a future version. Use req.getValidationResult().
   var errors = req.validationErrors();
   if (errors) {
     console.log(errors) 

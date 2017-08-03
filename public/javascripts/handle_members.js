@@ -112,10 +112,15 @@ $(document).ready(function() {
       url: '/members/addmember',
       dataType: 'JSON'
     }).done(function(response){
-        // Check for successful response (success)
-        var errors = response.errors;
-        // validation did not pass. Append the errors to the form
-        if (errors) {
+        // Validation passed and the request went through.
+        if (response.msg === 'success'){
+          $('#join_modal').modal('hide');
+          $("#join_success").modal('show')
+          $('#join_form input').val(''); // clear form inputs
+        // validation did not pass. Get errors and append to the form
+        } else if (response.msg === 'validation'){
+          var errors = response.errors;
+          if (errors) {
             var ul = $("<ul>");
             $.each(errors, function(index, error) {
               ul.append($('<li>').text(error.param + ' ' + error.msg));
@@ -123,15 +128,7 @@ $(document).ready(function() {
             ul.css({"color":"red"}); // temp basic style
             $('#join_form').append(ul);
           } 
-        // If validation passed and the request went through
-        if (response.msg === 'success'){
-                  alert('New member added successfully!')
-                  // clear form inputs
-                  $('#join_form input').val('');
-             }
-        else if (response.msg === 'validation'){
-            // do something?
-        // TODO: handle this case better?
+        // Some error occurred. TODO: handle this case better?
         } else {
             alert('Error: ' + response.msg)
         }

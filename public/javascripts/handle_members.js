@@ -86,7 +86,7 @@ $(document).ready(function() {
     
     event.preventDefault(); // prevent the form from being submitted
     // Delete if exists
-    $('#join_form > ul').remove();
+    $('#join_errors > ul').remove();
 
     // Get the label of the radio button
     var gender = '' // Initially the radio is unchecked
@@ -115,7 +115,7 @@ $(document).ready(function() {
         // Validation passed and the request went through.
         if (response.msg === 'success'){
           $('#join_modal').modal('hide');
-          $("#join_success").modal('show')
+          $("#join_success").modal('show');
           $('#join_form input').val(''); // clear form inputs
         // validation did not pass. Get errors and append to the form
         } else if (response.msg === 'validation'){
@@ -126,7 +126,7 @@ $(document).ready(function() {
               ul.append($('<li>').text(error.param + ' ' + error.msg));
             });
             ul.css({"color":"red"}); // temp basic style
-            $('#join_form').append(ul);
+            $('#join_errors').append(ul);
           } 
         // Some error occurred. TODO: handle this case better?
         } else {
@@ -144,5 +144,5 @@ $(document).ready(function() {
 function clearFields(){
   $('#join_form input').val('');
   // If validation error occurred, remove the messages
-  $('#join_form > ul').remove();
+  $('#join_errors > ul').remove();
 }

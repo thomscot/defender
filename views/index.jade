@@ -788,21 +788,23 @@ block content
 						// / End Contact Details
 						// Contact Form
 						.contact-form.col-md-6.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='300ms')
-							form#contact-form(method='post', action='sendmail.php', role='form')
+							form#contact_form(role='form')
 								.form-group
-									input#name.form-control(type='text', placeholder='お名前', name='name')
+									input#contact_name.form-control(type='text', placeholder='お名前')
 								.form-group
-									input#email.form-control(type='email', placeholder='電子郵便', name='email')
+									input#contact_email.form-control(type='email', placeholder='電子郵便')
 								.form-group
-									input#subject.form-control(type='text', placeholder='件名', name='subject')
+									input#contact_subject.form-control(type='text', placeholder='件名')
 								.form-group
-									textarea#message.form-control(rows='6', placeholder='伝言', name='message')
+									textarea#contact_message.form-control(type='text', rows='6', placeholder='伝言')
 								#mail-success.success
 									| Thank you. The Mailman is on His Way :)
 								#mail-fail.error
 									| Sorry, don't know what happened. Try later :(
-								#cf-submit
-									input#contact-submit.btn.btn-transparent(type='submit', value='Submit')
+								#contact_submit.text-center
+										button#contact_submit.btn.btn-transparent.btn-join(type='button') 送信
+								#contact_errors
+
 						// ./End Contact Form
 					// end row
 				// end container
@@ -890,7 +892,7 @@ block content
 										.col-lg-6.col-md-6.col-sm-6.col-xs-6
 											input#join_name_kana.form-control(type='text', placeholder='お名前[かな]', name='name_kana', style='background-color:#808080;')
 											br
-									input#join_email.form-control(type='email', placeholder='電子郵便', name='email', style='background-color:#808080;')
+									input#join_email.form-control(type='email', placeholder='電子郵便', name='join_email', style='background-color:#808080;')
 									br
 									input#email_confirmation.form-control(type='email', placeholder='電子郵便確認', name='email_confirmation', style='background-color:#808080;')
 								.row
@@ -907,11 +909,7 @@ block content
 										| 女
 												
 						.modal-footer
-							ul#error_list(style="color:red")
-								if errors
-									h3 THERE ARE ERRORS
-									each error, i in errors
-										li #{error.msg}
+							#join_errors
 							button#join_cancel.btn.btn-default(type='button', data-dismiss='modal', onclick='clearFields()') 中止
 							button#join_btn.btn.btn-transparent.btn-join(type='button') 入会する
 

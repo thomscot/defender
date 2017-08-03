@@ -4,6 +4,7 @@
 var express = require('express')
   , indexController = require('./routes/index')
   , membersController = require('./routes/members')
+  , contactController = require('./routes/contact')
   , path = require('path');
 /*******************************
  * Module dependencies (added) *
@@ -49,6 +50,7 @@ app.use(function(req,res,next){
 
 app.use('/', indexController);
 app.use('/members', membersController);
+app.use('/contact', contactController);
 
 
 // catch 404 and forwarding to error handler

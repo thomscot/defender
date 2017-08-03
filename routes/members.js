@@ -31,12 +31,13 @@ router.post('/addmember', validator, function(req, res) {
  * Middleware validator
  */
 function validator(req, res, next) {
-  req.checkBody('namekanji', 'お名前[漢字]項目は必須で御座います').notEmpty();
-  req.checkBody('namekana', 'お名前[漢字]項目は必須で御座います').notEmpty();
-  req.checkBody('email', '入力されたメール正しくはありません').isEmail();
-  req.checkBody('location', 'insert location').notEmpty();
-  req.checkBody('age', 'insert age').notEmpty();
-  req.checkBody('sex', 'insert gender').notEmpty();
+  req.checkBody('namekanji', 'お名前[漢字]をご入力下さい。').notEmpty();
+  req.checkBody('namekana', 'お名前[かな]をご入力下さい。').notEmpty();
+  req.checkBody('email', '入力されたメールが正しくありません。').isEmail();
+　req.checkBody('email_confirm', '入力されたメールが正しくありません。').isEmail();
+  req.checkBody('location', '位置をご入力下さい。').notEmpty();
+  req.checkBody('age', '年齢をご入力下さい。').notEmpty();
+  req.checkBody('sex', '性別をご選択下さい。').notEmpty();
   //TODO: req.validationErrors() may be removed in a future version. Use req.getValidationResult().
   var errors = req.validationErrors();
   if (errors) {

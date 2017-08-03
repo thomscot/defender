@@ -12,10 +12,10 @@ router.post('/contact', validate_contact, function(req, res) {
  * Middleware validator
  */
 function validate_contact(req, res, next) {
-  req.checkBody('contact_name', 'お名前項目は必須で御座います').notEmpty();
-  req.checkBody('contact_email', '入力されたメール正しくはありませんす').isEmail();
-  req.checkBody('contact_subject', 'insert subject').notEmpty();
-  req.checkBody('contact_message', 'insert message').notEmpty();
+  req.checkBody('contact_name', 'お名前をご入力下さい。').notEmpty();
+  req.checkBody('contact_email', '入力されたメールが正しくありません。').isEmail();
+  req.checkBody('contact_subject', '件名をご入力下さい。').notEmpty();
+  req.checkBody('contact_message', '伝言内容をご入力下さい。').notEmpty();
   //TODO: req.validationErrors() may be removed in a future version. Use req.getValidationResult().
   var errors = req.validationErrors();
   if (errors) {

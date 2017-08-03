@@ -25,6 +25,8 @@ $(document).ready(function() {
       url: '/contact/contact',
       dataType: 'JSON'
     }).done(function(response){
+        // If there were validation errors, clear them
+        clearValidation();
         // Validation passed and the request went through.
         if (response.msg === 'success'){
          alert('success')
@@ -32,12 +34,12 @@ $(document).ready(function() {
           var errors = response.contact_errors;
           console.log(errors)
           if (errors) {
-            var ul = $("<ul>");
             $.each(errors, function(index, error) {
-              ul.append($('<li>').text(error.param + ' ' + error.msg));
+              if (error.param==='contact_name'){ $("#contact_name_error").text(error.msg) }
+              if (error.param==='contact_email'){ $("#contact_email_error").text(error.msg) }
+              if (error.param==='contact_subject'){ $("#contact_subject_error").text(error.msg) }
+              if (error.param==='contact_message'){ $("#contact_message_error").text(error.msg) }
             });
-            ul.css({"color":"red"}); // temp basic style
-            $('#contact_errors').append(ul);
           } 
         // Some error occurred. TODO: handle this case better?
         } else {
@@ -47,3 +49,14 @@ $(document).ready(function() {
 
   });  // /join_btn Click
 }); // /DOM READY
+
+
+/*
+* Clear the validation fields
+*/
+function clearValidation(){
+  $("#contact_name_error").text('');
+  $("#contact_email_error").text('');
+  $("#contact_subject_error").text('');
+  $("#contact_message_error").text('');
+}

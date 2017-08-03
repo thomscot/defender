@@ -791,19 +791,18 @@ block content
 							form#contact_form(role='form')
 								.form-group
 									input#contact_name.form-control(type='text', placeholder='お名前')
+									#contact_name_error.validation-error
 								.form-group
 									input#contact_email.form-control(type='email', placeholder='電子郵便')
+									#contact_email_error.validation-error
 								.form-group
 									input#contact_subject.form-control(type='text', placeholder='件名')
+									#contact_subject_error.validation-error
 								.form-group
 									textarea#contact_message.form-control(type='text', rows='6', placeholder='伝言')
-								#mail-success.success
-									| Thank you. The Mailman is on His Way :)
-								#mail-fail.error
-									| Sorry, don't know what happened. Try later :(
+									#contact_message_error.validation-error
 								#contact_submit.text-center
 										button#contact_submit.btn.btn-transparent.btn-join(type='button') 送信
-								#contact_errors
 
 						// ./End Contact Form
 					// end row
@@ -879,7 +878,7 @@ block content
 				.modal-dialog(role='document')
 					.modal-content
 						.modal-header
-							button.close(type='button', data-dismiss='modal', aria-label='Close', onclick='clearFields()')
+							button.close(type='button', data-dismiss='modal', aria-label='Close', onclick='clearFields(); clearJoinValidation();')
 								span(aria-hidden='true') 閉
 							h4.modal-title 日本語擁護協会入会
 						.modal-body
@@ -888,29 +887,34 @@ block content
 									.row
 										.col-lg-6.col-md-6.col-sm-6.col-xs-6
 											input#join_name_kanji.form-control(type='text', placeholder='お名前[漢字]', name='join_name_kanji', style='background-color:#808080;')
+											#join_name_kanji_error.validation-error
 											br
 										.col-lg-6.col-md-6.col-sm-6.col-xs-6
 											input#join_name_kana.form-control(type='text', placeholder='お名前[かな]', name='name_kana', style='background-color:#808080;')
+											#join_name_kana_error.validation-error
 											br
 									input#join_email.form-control(type='email', placeholder='電子郵便', name='join_email', style='background-color:#808080;')
+									#join_email_error.validation-error
 									br
-									input#email_confirmation.form-control(type='email', placeholder='電子郵便確認', name='email_confirmation', style='background-color:#808080;')
+									input#join_email_confirmation.form-control(type='email', placeholder='電子郵便確認', name='email_confirmation', style='background-color:#808080;')
+									#join_email_confirmation_error.validation-error
 								.row
 									.col-lg-6.col-md-6.col-sm-6.col-xs-5
 										input#join_location.form-control(type='text', placeholder='位置', name='location', style='background-color:#808080;')
-									.col-lg-2.col-md-2.col-sm-2.col-xs-3.col-lg-offset-2.col-md-offset-2.col-sm-offset-2.col-xs-offset-1
+										#join_location_error.validation-error
+									.col-lg-4.col-md-4.col-sm-4.col-xs-4
 										input#join_age.form-control(type='number' min='0' max="120" placeholder='年齢', name='age', style='background-color:#808080;')
-								
+										#join_age_error.validation-error
+										#join_sex_error.validation-error
 									label.radio-inline(for="male-radio" style='margin-top:5px')
 										input#male-radio(type='radio', name='sex-radio')
 										| 男
 									label.radio-inline(for="female-radio" style='margin-top:5px')
 										input#female-radio(type='radio', name='sex-radio')
 										| 女
-												
 						.modal-footer
 							#join_errors
-							button#join_cancel.btn.btn-default(type='button', data-dismiss='modal', onclick='clearFields()') 中止
+							button#join_cancel.btn.btn-default(type='button', data-dismiss='modal', onclick='clearFields(); clearJoinValidation()') 中止
 							button#join_btn.btn.btn-transparent.btn-join(type='button') 入会する
 
 			// 

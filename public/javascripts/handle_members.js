@@ -100,6 +100,7 @@ $(document).ready(function() {
       'namekanji': $('#join_form input#join_name_kanji').val(),
       'namekana': $('#join_form input#join_name_kana').val(),
       'email': $('#join_form input#join_email').val(),
+      'email_confirm': $('#join_form input#join_email_confirmation').val(),
       'location': $('#join_form input#join_location').val(),
       'age': $('#join_form input#join_age').val(),
       'sex': gender
@@ -112,6 +113,8 @@ $(document).ready(function() {
       url: '/members/addmember',
       dataType: 'JSON'
     }).done(function(response){
+        // If there were validation messages, clear them
+        clearJoinValidation()
         // Validation passed and the request went through.
         if (response.msg === 'success'){
           $('#join_modal').modal('hide');
@@ -121,12 +124,15 @@ $(document).ready(function() {
         } else if (response.msg === 'validation'){
           var errors = response.errors;
           if (errors) {
-            var ul = $("<ul>");
             $.each(errors, function(index, error) {
-              ul.append($('<li>').text(error.param + ' ' + error.msg));
+              if (error.param==='namekanji'){ $("#join_name_kanji_error").text(error.msg) }
+              if (error.param==='namekana'){ $("#join_name_kana_error").text(error.msg) }
+              if (error.param==='email'){ $("#join_email_error").text(error.msg) }
+              if (error.param==='email_confirm'){ $("#join_email_confirmation_error").text(error.msg) }
+              if (error.param==='location'){ $("#join_location_error").text(error.msg) }
+              if (error.param==='age'){ $("#join_age_error").text(error.msg) }
+              if (error.param==='sex'){ $("#join_sex_error").text(error.msg) }
             });
-            ul.css({"color":"red"}); // temp basic style
-            $('#join_errors').append(ul);
           } 
         // Some error occurred. TODO: handle this case better?
         } else {
@@ -137,12 +143,20 @@ $(document).ready(function() {
   });  // /join_btn Click
 }); // /DOM READY
 
-
 /*
 * Helper to clear the fields when closing the modal.
 */
 function clearFields(){
   $('#join_form input').val('');
-  // If validation error occurred, remove the messages
-  $('#join_errors > ul').remove();
+
+}
+
+function clearJoinValidation(){
+  $("#join_name_kanji_error").text('');
+  $("#join_name_kana_error").text('');
+  $("#join_email_error").text('');
+  $('#join_email_confirmation_error').text('');
+  $("#join_location_error").text('');
+  $("#join_age_error").text('');
+  $("#join_sex_error").text('');
 }

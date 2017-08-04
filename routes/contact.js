@@ -10,6 +10,7 @@ router.post('/contact', validate_contact, function(req, res) {
   // NOTE: It seems Gmail doesn't allow to send messages with various FROM fields.
   // Hence all the receivede emails will be "from" the address in smtpTransport.
   // Temporary fix: put all the info in the message 
+  // NOTE 2: few things might have to be done for gmail like allowing access to less secure apps and disabling captcha.
   var message = "From: " + req.body.contact_name + "\n " + "Email: " + req.body.contact_email + "\n\n " + req.body.contact_message 
   
   var mailOptions= {

@@ -1695,9 +1695,7 @@ blockquote {
     border-color: #6CB570;
 }
 
-.join-form {
-    background-color: #6CB570;
-}
+
 
 /*=================================================================
 	Flashcard for dictionary search 
@@ -1798,4 +1796,20 @@ blockquote {
 
 .validation-error {
     color: red;
+}
+
+
+/*=================================================================
+	Join form
+==================================================================*/
+
+.join-form .form-control {
+	background-color: transparent;
+	border: 1px solid #4e595f;
+	height: 38px;
+}
+
+.join-form input:hover, 
+join_form:hover {
+    border-color: #6CB670;
 }

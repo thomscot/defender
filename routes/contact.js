@@ -1,11 +1,46 @@
 var express = require('express');
 var router = express.Router();
-
+var nodemailer = require('nodemailer');
+ 
 /*
  * POST the contact form.
  */
 router.post('/contact', validate_contact, function(req, res) {
- alert('message sent')
+  
+  // NOTE: It seems Gmail doesn't allow to send messages with various FROM fields.
+  // Hence all the receivede emails will be "from" the address in smtpTransport.
+  // Temporary fix: put all the info in the message 
+  var message = "From: " + req.body.contact_name + "\n " + "Email: " + req.body.contact_email + "\n\n " + req.body.contact_message 
+  
+  var mailOptions= {
+                    from: req.body.contact_email,
+                    to: "thommscot@gmail.com",
+                    subject: req.body.contact_subject,
+                    text: message
+                   };
+                 
+  var smtpTransport = nodemailer.createTransport({
+                    service: 'Gmail',
+                    // host: 'smtp.gmail.com',
+                    // port: 465,
+                    // secure: true,
+                     auth: {
+                            user: "thommscot@gmail.com",
+                            pass: "m43str0123"
+                            }
+         
+                      });
+
+  smtpTransport.sendMail(mailOptions, function(err, result){
+    console.log(err)
+     res.json(
+      (err === null) ? { msg: 'success' } : { msg: err }
+    );
+  });
+  
+  smtpTransport.close(); 
+
+  
 });
 
 /*
@@ -17,6 +52,7 @@ function validate_contact(req, res, next) {
   req.checkBody('contact_subject', '件名をご入力下さい。').notEmpty();
   req.checkBody('contact_message', '伝言内容をご入力下さい。').notEmpty();
   //TODO: req.validationErrors() may be removed in a future version. Use req.getValidationResult().
+  
   var errors = req.validationErrors();
   if (errors) {
     console.log(errors) 

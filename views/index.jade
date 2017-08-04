@@ -801,7 +801,7 @@ block content
 								.form-group
 									textarea#contact_message.form-control(type='text', rows='6', placeholder='伝言')
 									#contact_message_error.validation-error
-								#contact_submit.text-center
+							#contact_submit.text-center
 										button#contact_submit.btn.btn-transparent.btn-join(type='button') 送信
 
 						// ./End Contact Form
@@ -918,7 +918,7 @@ block content
 							button#join_btn.btn.btn-transparent.btn-join(type='button') 入会する
 
 			// 
-				New member success!
+				New member success modal
 				==============================================
 			#join_success.modal.fade(tabindex='-1', role='dialog', data-backdrop = "static", aria-labelledby='join_success')
 				.modal-dialog(role='document')
@@ -932,3 +932,19 @@ block content
 								| 無事に入会しました。有難う御座います。
 						.modal-footer
 							button#join_success_close.btn.btn-default(type='button', data-dismiss='modal') 閉じる
+							
+			// 
+				Contact success modal
+				==============================================
+			#contact_success.modal.fade(tabindex='-1', role='dialog', data-backdrop = "static", aria-labelledby='contact_success')
+				.modal-dialog(role='document')
+					.modal-content
+						.modal-header
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') 閉
+							h4.modal-title お問い合わ確認
+						.modal-body
+							p.text-center(style="font-size:20px")
+								| ご連絡有難う御座います。無事に伝言を送信しました。
+						.modal-footer
+							button#contact_success_close.btn.btn-default(type='button', data-dismiss='modal') 閉じる

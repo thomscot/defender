@@ -16,8 +16,6 @@ $(document).ready(function() {
       'contact_message': $('#contact_form textarea#contact_message').val()
     }
     
-    
-
     // AJAX to post the object to contact service
     $.ajax({
       type: 'POST',
@@ -27,9 +25,11 @@ $(document).ready(function() {
     }).done(function(response){
         // If there were validation errors, clear them
         clearValidation();
-        // Validation passed and the request went through.
         if (response.msg === 'success'){
-         alert('success')
+         // show success modal and clear form
+         $('#contact_success').modal('show');
+         $('#contact_form input').val('');
+         $('#contact_message').val('');
         } else if (response.msg === 'validation'){
           var errors = response.contact_errors;
           console.log(errors)

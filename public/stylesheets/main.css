@@ -1655,6 +1655,7 @@ blockquote {
     border: 2px solid #6cb670;
     max-height: 300px;
     overflow-y: scroll;
+    white-space: pre-line; /* preserves new lines from gekibun.txt */
 
 }
 
@@ -1667,6 +1668,7 @@ blockquote {
     color: #6cb670;
     font-size: 50px;
 }
+
 
 /*=================================================================
 	Modal Styling 
@@ -1690,6 +1692,9 @@ blockquote {
     background-color: #2B2C30;
 }
 
+.modal-footer p {
+    font-size: 18px;
+}
 
 .btn-join {
     border-color: #6CB570;

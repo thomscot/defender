@@ -1,4 +1,12 @@
-                                
+/* ========================================================================= */
+/*	Add this part to load gekibun.txt on page ready
+/* ========================================================================= */
+
+$(document).ready(function() {
+  $.get("/data/gekibun.txt", function(txt) {
+    $('#gekibun').text(txt);
+  })    
+});
 
 jQuery(function ($) { "use strict";
 	

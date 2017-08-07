@@ -121,6 +121,8 @@ block content
 							li
 								a(href='#joinus') 入会
 							li
+								a(href='#blog') 記事
+							li
 								a(href='#contact-us') お問い合わせ
 					// /main nav
 			//
@@ -280,24 +282,11 @@ block content
 							h2
 								| 檄
 								span.color 文
-							.border
-							br
-							br
-							br
-							.boxed
-								p
-									| ばもパンのびっくり畑屋に狸にするゴーシュじまし またまた俄ますたという怒りたた。いい気ですましことたはたすると赤の気の毒がいのためにはどんとだめたましんで、誰まで顔に考えれんなかった
-									叩くすぎ何はからだを物凄いましと前のゴーシュのゴーシュ館に弾い第十ゴーシュ汁のかっこうをなって来たた。ゴーシュは今日見てくれませ。ボーは十はいっ水車のようでわからからあげない。舞台は表情うそやおまえを負けていた。
-									間も床にさっぱりに叫ぶと眼が中のようがこっながらセロがくわえてもう外へして行った。やっとちらちらみみずくに糸で怒っますまし。おまえまだにコップから弾きてゴーシュがあるましまし。ひまに出るたた。「へんをありた。
-									窓、私に外国。云っ
-									それは毎晩のところのどう前のうちに許しじまし。ばかも譜にごこどもへのきて実にめいめいを明けて何とかこんどなっせないうちが出しただ。
-									ふっとせいせいひる、弾きて云いからくれましてかっこうにそして先生へじつに時わかったでし。「ケースい。かっこうをぶっつけた。云いぞ。
-									みんなもみんなからはんを通りとじゃあわてむとそっくりゆうべのとおりぐんぐんはないんたがよ。」何はまっ黒そうをつかまえるてね窓眼をなったりだおばあさんのラプソディをしながらしたりあるきてしまいた。舞台はして孔へ叩くたず。みんなは一杯セロは赤くものたて扉もこれからわるくのですたら。「たくさんの前の勢を。
-									弾く。」何はどうありないだ。下もマッチをあててこんどで。
-									すると前はもうなるですで。ない作曲たとなっがいたしばかっこうにたっようた猫にききてまたよく先生へぺんはいるならた。またかとドレミファソラシドもてむしゃくしゃ合せだまして切なのをは前は声の町ますだ。額はおまえと今ましセロのうちそれに考えだようにぞかっこう鳥へセロでちがいてそれか弾いんがおどすていたです。「するとそういつかのゴーシュ。
-									くれよ。」
-									なあんだと帰っていじめですかとしてたいへんシュッを楽長からぶるぶる考えて馬車くらべたた。「気の毒た。ごくごく云いていろた。そのんは萱の子たんた。それへそのどうかしまし気の。
-									こども。かっかじゃすっかり眼二日は悪いんたらね。胸が眼にしのに出しみんな目からその猫ホール活動たりむとそっくりゆうべのとおりぐんぐんたちのゴーシュなんかのトマト孔を入っていたよろよろこれのちがいは思わず弾いことた。
+						.border
+						br
+						br
+						br
+						#gekibun.boxed
 					// End row
 				// End container
 			// End section
@@ -695,8 +684,8 @@ block content
 						// section title
 						.title.text-center.wow.fadeInDown
 							h2
-								| Latest 
-								span.color Posts
+								| 記 
+								span.color 事
 							.border
 						// /section title
 						.clearfix
@@ -704,53 +693,52 @@ block content
 							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
 								.note
 									.media-wrapper
-										img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
+										img.img-responsive(src='images/blog/cover.png', alt='cover')
 									.excerpt
-										h3 Simple Image Post
+										h3 記事の題名
 										p
-											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
-										a.btn.btn-transparent(href='single-post.html') Read more
+											| 第一の記事。第一の記事。第一の記事。第一の記事。
+										a.btn.btn-transparent(href='single-post.html' disabled) Read more
 							// /single blog post
 							// single blog post
-							article.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='200ms')
-								.note
-									#gallery-post.media-wrapper
-										.item
-											img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
-										.item
-											img.img-responsive(src='images/blog/bicycle.jpg', alt='Flying bicycle')
-										.item
-											img.img-responsive(src='images/blog/3D-beach-art.jpg', alt='3D Beach Art | Meghna')
-									.excerpt
-										h3 Simple Slider Post
-										p
-											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
-										a.btn.btn-transparent(href='single-post.html') Read more
-							// end single blog post
 							// single blog post
-							article.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='400ms')
+							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
 								.note
 									.media-wrapper
-										img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
+										img.img-responsive(src='images/blog/cover.png', alt='cover')
 									.excerpt
-										h3 Simple Image Post
+										h3 記事の題名
 										p
-											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
-										a.btn.btn-transparent(href='single-post.html') Read more
-							// end single blog post
+											| 第一の記事。第一の記事。第一の記事。第一の記事。
+										a.btn.btn-transparent(href='single-post.html' disabled) Read more
+							// /single blog post
 							// single blog post
-							article.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='600ms')
-								.note.kill-margin-bottom
+							// single blog post
+							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
+								.note
 									.media-wrapper
-										img.img-responsive(src='images/blog/amazing-caves-coverimage.jpg', alt='amazing caves coverimage')
+										img.img-responsive(src='images/blog/cover.png', alt='cover')
 									.excerpt
-										h3 Simple Image Post
+										h3 記事の題名
 										p
-											| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non skateboard dolor brunch.
-										a.btn.btn-transparent(href='single-post.html') Read more
-							// end single blog post
+											| 第一の記事。第一の記事。第一の記事。第一の記事。
+										a.btn.btn-transparent(href='single-post.html' disabled) Read more
+							// /single blog post
+							// single blog post
+							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
+								.note
+									.media-wrapper
+										img.img-responsive(src='images/blog/cover.png', alt='cover')
+									.excerpt
+										h3 記事の題名
+										p
+											| 第一の記事。第一の記事。第一の記事。第一の記事。
+										a.btn.btn-transparent(href='single-post.html' disabled) Read more
+							// /single blog post
+							// single blog post
+							// single blog post
 						.all-post.text-center
-							a.btn.btn-transparent(href='blog.html') View All Post
+							a.btn.btn-transparent(href='blog.html' disabled) 全ての記事
 					// end row
 				// end container
 			// end section
@@ -846,7 +834,7 @@ block content
 							// /. End Footer Social Links
 							// copyright
 							.copyright.text-center
-								a(href='index.html')
+								a(href='#body')
 									img(src='images/logogreen50.png', alt='logo')
 								br
 								p(style="margin-top:10px;")
@@ -913,7 +901,7 @@ block content
 										input#female-radio(type='radio', name='sex-radio')
 										| 女
 						.modal-footer
-							#join_errors
+							p#footer_message.text-center 資料を集める為に上記の全ての項目をご入力の程お願い致します。
 							button#join_cancel.btn.btn-default(type='button', data-dismiss='modal', onclick='clearFields(); clearJoinValidation()') 中止
 							button#join_btn.btn.btn-transparent.btn-join(type='button') 入会する
 

@@ -649,7 +649,7 @@ block content
 				// End container
 			// End section
 			//
-				Start Twitter Feed
+				Start Join Us section
 				===========================================
 			section#joinus.parallax-section
 				.container
@@ -670,7 +670,7 @@ block content
 								| それは毎晩のところのどう前のうちに許しじまし。ばかも譜にごこどもへのきて実にめいめいを明けて何とかこんどなっせないうちが出しただ。
 							
 							// join us button
-							a.btn.btn-transparent.wow.fadeInUp(title='入会書', target='_blank', data-wow-duration='500ms', data-toggle="modal", data-target="#join_modal") 入会書表示
+							a.btn.btn-transparent.btn-join.wow.fadeInUp(title='入会書', target='_blank', data-wow-duration='500ms', data-toggle="modal", data-target="#join_modal") 入会書表示
 						// /join us button
 					// End row
 				// End container
@@ -920,6 +920,24 @@ block content
 								| 無事に入会しました。有難う御座います。
 						.modal-footer
 							button#join_success_close.btn.btn-default(type='button', data-dismiss='modal') 閉じる
+							
+			// 
+				New member fail modal
+				==============================================
+			#join_fail.modal.fade(tabindex='-1', role='dialog', data-backdrop = "static", aria-labelledby='join_fail')
+				.modal-dialog(role='document')
+					.modal-content
+						.modal-header
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') 閉
+							h4.modal-title(style="color: red") 入会出来ませんでした
+						.modal-body
+							p(style="font-size:20px")
+								| サバーの方に不正が発生しました。問題が解決されない場合は下記の内容を含めてご連絡下さい。
+							br
+							textarea#error_message.form-control(readonly, type='text', rows='3', style="font-style: italic; color:red; resize:vertical")
+						.modal-footer
+							button#join_fail_close.btn.btn-default(type='button', data-dismiss='modal') 閉じる
 							
 			// 
 				Contact success modal

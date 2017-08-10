@@ -1,3 +1,6 @@
+// To ignore jQuery warnings from Cloud9 IDE on $ symbols
+/* global $ */
+
 /* ========================================================================= */
 /*	Add this part to load gekibun.txt on page ready
 /* ========================================================================= */

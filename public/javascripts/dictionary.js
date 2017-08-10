@@ -4,6 +4,9 @@
 * is shown in flipping flashcard-like div.                                
 ***************************************************************************/
 
+// To ignore jQuery warnings from Cloud9 IDE
+/* global $ */
+
 $(document).ready(function(){
   
   // At page ready clear the value in the translation fields

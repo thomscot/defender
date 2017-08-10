@@ -1,3 +1,6 @@
+// To ignore jQuery warnings from Cloud9 IDE
+/* global $ */
+
 $(document).ready(function() {
 
  

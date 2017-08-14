@@ -42,12 +42,33 @@ router.post('/addmember', validator, async (req,res) => {
     try {
           let db = req.db;
           let collection = db.get('memberstest');
-          collection.insert(req.body, function(err, result){
-          res.json(
-            (err === null) ? { msg: 'success' } : { msg: err.message }
-          );
-        });
-        await db.then(() => 1);
+          
+          // Check if email is already in DB
+          collection.findOne({'email': req.body.email }, function(err, member) {
+
+            if (err) { // TODO: handle this?
+              console.log('Signup error');
+            }
+            if(member){ // If we already have a member with this email, return 
+              // console.log('email already exists, email: ' + req.body.email);                         
+              var err = new Error();
+              err.message = '入力された電子郵便住所は既に登録されています。';
+              res.json(
+                { msg: 'email_exists' , error: err }
+              );
+            } else { // Otherwise do the insert 
+  
+              collection.insert(req.body, function(err, result){
+                res.json(
+                  (err === null) ? { msg: 'success' } : { msg: err.message }
+                );
+              });
+            }
+          
+          });
+          
+    await db.then(() => 1);
+    
     } catch(e) {
       res.json({msg: e.message})
     }

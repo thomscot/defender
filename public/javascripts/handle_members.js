@@ -59,8 +59,12 @@ $(document).ready(function() {
               if (error.param==='sex'){ $("#join_sex_error").text(error.msg) }
             });
           } 
-        // Some error occurred. TODO: handle this case better?
-        } else {
+        } else if (response.msg === 'email_exists'){
+           $("#join_email_error").text(response.error.message)
+           $("#join_email_confirmation_error").text(response.error.message)
+       
+        } else {  
+              // Some error occurred. TODO: handle this case better?
               // Should I hide the join_modal?
               $('#join_modal').modal('hide');
               $('#error_message').text(response.msg);

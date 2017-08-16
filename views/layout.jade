@@ -55,8 +55,11 @@ html
      script(src='javascripts/tweetie.min.js')
     
     // Google Map API
-
-    script(type='text/javascript', src='https://maps.google.com/maps/api/js?sensor=false')
+    
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAyrbPagdycRa0D-IJz1V_y8p4L4ZqZX7Y')
+    
+    // from google below. Do I need async='' and the callback? 
+    //script (type="text/javascript", async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyrbPagdycRa0D-IJz1V_y8p4L4ZqZX7Y&callback=initMap")
     // Highlight menu item
 
     script(src='javascripts/jquery.nav.js')
@@ -84,5 +87,6 @@ html
     // Js to handle members related js
     
     script(src='javascripts/handle_members.js')
+    script(src='javascripts/handle_contact.js')
   body
     block content

@@ -67,7 +67,7 @@ router.post('/addmember', validator, async (req,res) => {
           
           });
           
-    await db.then(() => 1);
+    await db.then(() => 1); // really need to understand this.
     
     } catch(e) {
       res.json({msg: e.message})

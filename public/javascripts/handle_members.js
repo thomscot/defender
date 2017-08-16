@@ -6,12 +6,12 @@ $(document).ready(function() {
   // Just in case clear all the join form fields on refresh
    $('#join_form input').val('');
 
-  // Add new member to db when join_btn is clicked
+  // When join_btn is clicked, we make an ajax call to POST the data to be inserted in the db
   $('#join_btn').click(function(event){
     
     event.preventDefault(); // prevent the form from being submitted
     // Delete if exists
-    $('#join_errors > ul').remove();
+   // $('#join_errors > ul').remove();
 
     // Get the label of the radio button
     var gender = '' // Initially the radio is unchecked

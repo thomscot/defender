@@ -1656,12 +1656,12 @@ blockquote {
     max-height: 300px;
     overflow-y: scroll;
     white-space: pre-line; /* preserves new lines from gekibun.txt */
+    font-size: 18px;
 
 }
 
 .boxed p {
     margin: 25px;
-    font-size: 16px;
 }
 
 .flashcard_hover h3 {

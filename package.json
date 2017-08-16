@@ -1,6 +1,7 @@
 {
-  "name": "application-name",
+  "name": "defenders",
   "version": "0.0.1",
+  "description": " An app for a cultural association for the preservation of the Japanese language ",
   "private": true,
   "scripts": {
     "start": "node .bin/www"

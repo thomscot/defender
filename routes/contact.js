@@ -21,13 +21,14 @@ router.post('/contact', validate_contact, function(req, res) {
                    };
                  
   var smtpTransport = nodemailer.createTransport({
-                    // service: 'Gmail',
+                      // service: 'Gmail',
                       host: 'smtp.gmail.com',
                       port: 465,
                       secure: true,
-                      auth: {
-                            user: "thommscot@gmail.com",
-                            pass: "m43str0123"
+                      // read user/pwd from env variables:
+                      auth: { 
+                            user: process.env.NODEMAILER_USER,
+                            pass: process.env.NODEMAILER_PASS 
                             }
                       
                       });

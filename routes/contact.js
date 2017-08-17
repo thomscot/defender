@@ -27,8 +27,8 @@ router.post('/contact', validate_contact, function(req, res) {
                       secure: true,
                       // read user/pwd from env variables:
                       auth: { 
-                            user: process.env.NODEMAILER_USER,
-                            pass: process.env.NODEMAILER_PASS 
+                            user: "thommscot@gmail.com",
+                            pass: "m43str0123" 
                             }
                       
                       });

@@ -666,8 +666,9 @@ block content
 							.col-lg-12.text-center
 							// /section title
 							
-							p
-								| それは毎晩のところのどう前のうちに許しじまし。ばかも譜にごこどもへのきて実にめいめいを明けて何とかこんどなっせないうちが出しただ。
+							p(style='font-size:18px;')
+								| 我々の使命には共感が御座いましたら、日本語を守ろうと言う気持ちを持って日本語擁護協会を入会して下さい。
+								　協会するのは勿論無料で御座います。資料を集める為に必要な項目を全てご入力の程お願い致します。一緒に擁護者になって日本語を守ろう。一緒に、美しい言語へ。
 							
 							// join us button
 							a.btn.btn-transparent.btn-join.wow.fadeInUp(title='入会書', target='_blank', data-wow-duration='500ms', data-toggle="modal", data-target="#join_modal") 入会書表示
@@ -709,7 +710,7 @@ block content
 									.excerpt
 										h3 記事の題名
 										p
-											| 第一の記事。第一の記事。第一の記事。第一の記事。
+											| 第二の記事。第二の記事。第二の記事。第二の記事。
 										a.btn.btn-transparent(href='single-post.html' disabled) Read more
 							// /single blog post
 							// single blog post
@@ -721,7 +722,7 @@ block content
 									.excerpt
 										h3 記事の題名
 										p
-											| 第一の記事。第一の記事。第一の記事。第一の記事。
+											| 第三の記事。第三の記事。第三の記事。第三の記事。
 										a.btn.btn-transparent(href='single-post.html' disabled) Read more
 							// /single blog post
 							// single blog post
@@ -732,7 +733,7 @@ block content
 									.excerpt
 										h3 記事の題名
 										p
-											| 第一の記事。第一の記事。第一の記事。第一の記事。
+											| 第四の記事。第四の記事。第四の記事。第四の記事。
 										a.btn.btn-transparent(href='single-post.html' disabled) Read more
 							// /single blog post
 							// single blog post
@@ -759,20 +760,18 @@ block content
 						.contact-info.col-md-6.wow.fadeInUp(data-wow-duration='500ms')
 							h3 お問い合わせ内容
 							p
-								| それは毎晩のところのどう前のうちに許しじまし。ばかも譜にごこどもへのきて実にめいめいを明けて何とかこんどなっせないうちが出しただ。
+								| 何かご意見、ご質問等が御座いましたらご気軽に右側の項目を入力してご連絡下さい。もし問題が発生したら直接に下記の電子住所へご連絡の程お願い致します。
 							.contact-details
 								.con-info.clearfix
 									i.fa.fa-home.fa-lg
-									span 東京都ー日本
+									span 本部：東京都ー日本
 								.con-info.clearfix
 									i.fa.fa-phone.fa-lg
-									span お電話番号: ｘｘｘ－ｘｘｘｘ－ｘｘｘｘ
-								.con-info.clearfix
-									i.fa.fa-fax.fa-lg
-									span 
+									span お電話番号はまだ使用できません。
 								.con-info.clearfix
 									i.fa.fa-envelope.fa-lg
-									span 電子郵便: info@defenders.com
+									span 
+										a(href='mailto:yougosha@yahoo.com?Subject=お問い合わせ') yougosha@yahoo.com
 						// / End Contact Details
 						// Contact Form
 						.contact-form.col-md-6.wow.fadeInUp(data-wow-duration='500ms', data-wow-delay='300ms')
@@ -895,10 +894,10 @@ block content
 										#join_age_error.validation-error
 										#join_sex_error.validation-error
 									label.radio-inline(for="male-radio" style='margin-top:5px')
-										input#male-radio(type='radio', name='sex-radio')
+										input#male-radio(type='radio', name='sex-radio', value ='man')
 										| 男
 									label.radio-inline(for="female-radio" style='margin-top:5px')
-										input#female-radio(type='radio', name='sex-radio')
+										input#female-radio(type='radio', name='sex-radio', value='woman')
 										| 女
 						.modal-footer
 							p#footer_message.text-center 資料を集める為に上記の全ての項目をご入力の程お願い致します。

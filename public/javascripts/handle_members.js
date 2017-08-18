@@ -10,15 +10,17 @@ $(document).ready(function() {
   $('#join_btn').click(function(event){
     
     event.preventDefault(); // prevent the form from being submitted
-    // Delete if exists
-   // $('#join_errors > ul').remove();
 
-    // Get the label of the radio button
-    var gender = '' // Initially the radio is unchecked
+    // Initially the radio is unchecked
+    var gender = '' 
+   
     $('input[name="sex-radio"]:checked').each(function() {
       var radioValue = $(this).attr("id");
-      gender = $("label[for='"+radioValue+"']").text();
+      if (radioValue === 'male-radio') gender = '男';
+      else gender = '女';
     });
+    
+    // var gender = $('input[name="sex-radio"]:checked').val(); why this doesn't work? Returns empty
     
     // Create the new member object
     var newMember = {

@@ -7,23 +7,28 @@ var nodemailer = require('nodemailer');
  */
 router.post('/contact', validate_contact, function(req, res) {
   
-  // NOTE: It seems Gmail doesn't allow to send messages with various FROM fields.
+  // NOTE 1: It seems Gmail doesn't allow to send messages with various FROM fields.
   // Hence all the receivede emails will be "from" the address in smtpTransport.
   // Temporary fix: put all the info in the message 
   // NOTE 2: few things might have to be done for gmail like allowing access to less secure apps and disabling captcha.
+  // NOTE 3: switched to Yahoo because in production gmail kept giving errors although the captcha thing (is like you have to do it over and over each time)
+  // NOTE 4: Services such as gmail will automatically substitue the "from" field with the email address using the service. However, Yahoo will return authentication error.
+  // Therfore, when using Yahoo the "from" should be the same as the user in the authentication. See NOTE 1.
+  // NOTE 5: in dev environment Yahoo/Hotmail won't work as cloud9 blocks all SMTP connections to avoid spam (but somehow gmail works in dev too).
+  
   var message = "From: " + req.body.contact_name + "\n " + "Email: " + req.body.contact_email + "\n\n " + req.body.contact_message 
 
   var mailOptions= {
-                    from: "yougosha@yahoo.com",
+                    from: process.env.NODEMAILER_USER,
                     to: "yougosha@yahoo.com",
                     subject: req.body.contact_subject,
                     text: message
                    };
      
   var smtpTransport = nodemailer.createTransport( {
-                      // service: 'yahoo',
-                      host: 'plus.smtp.mail.yahoo.com',
-                      port: 465,
+                      service: 'yahoo',
+                      // host: 'plus.smtp.mail.yahoo.com',
+                      // port: 465,
                       // read user/pwd from env variables:
                       auth: { 
                             user:  process.env.NODEMAILER_USER,

@@ -14,7 +14,7 @@ router.post('/contact', validate_contact, function(req, res) {
   var message = "From: " + req.body.contact_name + "\n " + "Email: " + req.body.contact_email + "\n\n " + req.body.contact_message 
 
   var mailOptions= {
-                    from: req.body.contact_email,
+                    from: "yougosha@yahoo.com",
                     to: "yougosha@yahoo.com",
                     subject: req.body.contact_subject,
                     text: message

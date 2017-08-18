@@ -12,23 +12,20 @@ router.post('/contact', validate_contact, function(req, res) {
   // Temporary fix: put all the info in the message 
   // NOTE 2: few things might have to be done for gmail like allowing access to less secure apps and disabling captcha.
   var message = "From: " + req.body.contact_name + "\n " + "Email: " + req.body.contact_email + "\n\n " + req.body.contact_message 
-  
+
   var mailOptions= {
                     from: req.body.contact_email,
-                    to: "thommscot@gmail.com",
+                    to: "yougosha@yahoo.com",
                     subject: req.body.contact_subject,
                     text: message
                    };
-                 
-  var smtpTransport = nodemailer.createTransport({
-                      // service: 'Gmail',
-                      host: 'smtp.gmail.com',
-                      port: 465,
-                      secure: true,
+     
+  var smtpTransport = nodemailer.createTransport( {
+                      service: 'yahoo',
                       // read user/pwd from env variables:
                       auth: { 
-                            user: process.env.NODEMAILER_USER,
-                            pass: process.env.NODEMAILER_PASS 
+                            user:  process.env.NODEMAILER_USER,
+                            pass:  process.env.NODEMAILER_PASS
                             }
                       
                       });

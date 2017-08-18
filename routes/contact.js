@@ -21,7 +21,9 @@ router.post('/contact', validate_contact, function(req, res) {
                    };
      
   var smtpTransport = nodemailer.createTransport( {
-                      service: 'yahoo',
+                      // service: 'yahoo',
+                      host: 'plus.smtp.mail.yahoo.com',
+                      port: 465,
                       // read user/pwd from env variables:
                       auth: { 
                             user:  process.env.NODEMAILER_USER,

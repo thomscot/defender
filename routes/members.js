@@ -2,40 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /*
- * GET members listing.
- */
-router.get('/memberslist', function(req, res) {
-    var db = req.db;
-    var collection = db.get('memberstest');
-    collection.find({},{},function(e,docs){
-        res.json(docs);
-    });
-});
-
-
-/*
- NOTE: According to the answer to my SO question, the only changed needed to catch the error if
- the DB is down, is to add the option { bufferMaxEntries: 0 } in the app.js to the db instance.
- Still it seems if I use the code below no error is caught.  For now will use the workaround
- with try/catch. This seems to be working although not necessary. I'd better understand this.
-*/
-
-/*
- * POST to addmember.
- */
-// router.post('/addmember', validator, function(req, res) {
-//   let db = req.db;
-//   var collection = db.get('memberstest')
-//   collection.insert(req.body, function(err, result){
-//     res.json(
-//       (err === null) ? { msg: 'success' } : { msg: err.message }
-//     );
-//   });
-// });
-
-
-/*
- * POST to addmember.
+ * POST tp addmember to insert a new member in the database upon validation
+ * and provided the user email has not been registered yet.
  */
 router.post('/addmember', validator, async (req,res) => {
 
@@ -50,21 +18,18 @@ router.post('/addmember', validator, async (req,res) => {
               console.log('Signup error');
             }
             if(member){ // If we already have a member with this email, return 
-              // console.log('email already exists, email: ' + req.body.email);                         
               var err = new Error();
               err.message = '入力された電子郵便住所は既に登録されています。';
               res.json(
                 { msg: 'email_exists' , error: err }
               );
             } else { // Otherwise do the insert 
-  
               collection.insert(req.body, function(err, result){
                 res.json(
                   (err === null) ? { msg: 'success' } : { msg: err.message }
                 );
               });
             }
-          
           });
           
     await db.then(() => 1); // really need to understand this.
@@ -77,7 +42,8 @@ router.post('/addmember', validator, async (req,res) => {
 
 
 /*
- * Middleware validator
+ * Middleware validator to check that the fields are filled correctly. 
+ * For now checking non-empty and isEmail() is enough.
  */
 function validator(req, res, next) {
 
@@ -96,8 +62,7 @@ function validator(req, res, next) {
     res.json({msg: 'validation', errors:errors}); // send back the errors as json
   }
   else {
-    // If validation pass, I don't want to insert the email twice in the DB
-    delete req.body.email_confirm
+    delete req.body.email_confirm // In order to avoid inserting email twice in DB (as 'email' and 'email_confirm')
     next();
   }
 };

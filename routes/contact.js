@@ -14,22 +14,19 @@ router.post('/contact', validate_contact, function(req, res) {
   // NOTE 3: switched to Yahoo because in production gmail kept giving errors although the captcha thing (is like you have to do it over and over each time)
   // NOTE 4: Services such as gmail will automatically substitue the "from" field with the email address using the service. However, Yahoo will return authentication error.
   // Therfore, when using Yahoo the "from" should be the same as the user in the authentication. See NOTE 1.
-  // NOTE 5: in dev environment Yahoo/Hotmail won't work as cloud9 blocks all SMTP connections to avoid spam (but somehow gmail works in dev too).
+  // NOTE 5: in dev environment Yahoo/Hotmail THIS WILL NOT WORK as cloud9 blocks all SMTP connections to avoid spam (but somehow gmail works in dev too).
   
   var message = "From: " + req.body.contact_name + "\n " + "Email: " + req.body.contact_email + "\n\n " + req.body.contact_message 
 
   var mailOptions= {
-                    from: process.env.NODEMAILER_USER,
-                    to: "yougosha@yahoo.com",
+                    from: process.env.NODEMAILER_USER, // NOTE 1 and 4
+                    to: process.env.NODEMAILER_USER,
                     subject: req.body.contact_subject,
                     text: message
                    };
      
   var smtpTransport = nodemailer.createTransport( {
                       service: 'yahoo',
-                      // host: 'plus.smtp.mail.yahoo.com',
-                      // port: 465,
-                      // read user/pwd from env variables:
                       auth: { 
                             user:  process.env.NODEMAILER_USER,
                             pass:  process.env.NODEMAILER_PASS
@@ -50,7 +47,7 @@ router.post('/contact', validate_contact, function(req, res) {
 });
 
 /*
- * Middleware validator
+ * Middleware validator to check the form fields are filled correctly.
  */
 function validate_contact(req, res, next) {
   req.checkBody('contact_name', 'お名前をご入力下さい。').notEmpty();

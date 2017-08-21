@@ -113,7 +113,7 @@ block content
 							li
 								a(href='#services') 檄文
 							li
-								a(href='#showcase') 例言葉
+								a(href='#showcase') 例文
 							li
 								a(href='#gaini-dictionary') 外日辞書
 							li
@@ -300,21 +300,21 @@ block content
 							// section title
 							.title.text-center
 								h2
-									| お 
-									span.color 例
+									| 例 
+									span.color 文
 								.border
 							// /section title
 							// portfolio item filtering
 							.portfolio-filter.clearfix
 								ul.text-center
 									li
-										a.filter(href='javascript:void(0)', data-filter='all') 基準
+										a.filter(href='javascript:void(0)', data-filter='all') 全て
 									li
-										a.filter(href='javascript:void(0)', data-filter='.app') 絶対駄目
+										a.filter(href='javascript:void(0)', data-filter='.unnecessary') 必要の無い
 									li
-										a.filter(href='javascript:void(0)', data-filter='.web') 提案
+										a.filter(href='javascript:void(0)', data-filter='.avoidable') 避けられる
 									li
-										a.filter(href='javascript:void(0)', data-filter='.photoshop') 新言葉
+										a.filter(href='javascript:void(0)', data-filter='.newwords') 新しい言葉
 							// /flashcard item filtering
 						// /end col-lg-12
 					// end row
@@ -323,7 +323,7 @@ block content
 				.portfolio-item-wrapper.wow.fadeInUp(data-wow-duration='500ms')
 					ul#og-grid.og-grid
 						// single flashcard item
-						li.mix.app
+						li.mix.newwords
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/escalator_border.png', data-title='escalator', data-description='escalator')
 								img(src='images/portfolio/escalator_border.png', alt='escalator')
 								.hover-mask
@@ -333,7 +333,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.web
+						li.mix.unnecessary
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/class_border.png', data-title='class', data-description='class')
 								img(src='images/portfolio/class_border.png', alt='class')
 								.hover-mask
@@ -343,7 +343,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.photoshop
+						li.mix.unnecessary
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/commitment_border.png', data-title='commitment', data-description='commitment')
 								img(src='images/portfolio/commitment_border.png', alt='commitment')
 								.hover-mask
@@ -353,7 +353,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.photoshop
+						li.mix.unnecessary
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/member_border.png', data-title='member', data-description='member')
 								img(src='images/portfolio/member_border.png', alt='member')
 								.hover-mask
@@ -363,7 +363,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.photoshop
+						li.mix.unnecessary
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/evidence_border.png', data-title='evidence', data-description='evidence')
 								img(src='images/portfolio/evidence_border.png', alt='evidence')
 								.hover-mask
@@ -373,7 +373,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.photoshop
+						li.mix.avoidable
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/share_border.png', data-title='share', data-description='share')
 								img(src='images/portfolio/share_border.png', alt='share')
 								.hover-mask
@@ -383,27 +383,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.photoshop
-							a(href='javascript:void(0)', data-largesrc='images/portfolio/user_border.png', data-title='user', data-description='user')
-								img(src='images/portfolio/user_border.png', alt='user')
-								.hover-mask
-									.flashcard_hover
-										h3 利用者
-									span
-										i.fa.fa-thumbs-o-up.fa-2x
-						// /single flashcard item
-						// single flashcard item
-						li.mix.photoshop
-							a(href='javascript:void(0)', data-largesrc='images/portfolio/bedroom_border.png', data-title='bedroom', data-description='bedroom')
-								img(src='images/portfolio/bedroom_border.png', alt='bedroom')
-								.hover-mask
-									.flashcard_hover
-										h3 寝室
-									span
-										i.fa.fa-thumbs-o-up.fa-2x
-						// /single flashcard item
-						// single flashcard item
-						li.mix.photoshop
+						li.mix.unnecessary
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/advice_border.png', data-title='advice', data-description='advice')
 								img(src='images/portfolio/advice_border.png', alt='advice')
 								.hover-mask
@@ -413,7 +393,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.photoshop
+						li.mix.unnecessary
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/document_border.png', data-title='document', data-description='document')
 								img(src='images/portfolio/document_border.png', alt='document')
 								.hover-mask
@@ -423,7 +403,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.photoshop
+						li.mix.unnecessary
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/event_border.png', data-title='event', data-description='event')
 								img(src='images/portfolio/event_border.png', alt='event')
 								.hover-mask
@@ -433,12 +413,32 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.app
+						li.mix.unnecessary.hiddencard
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/aircon_border.png', data-title='aircon', data-description='aircon')
-								img(src='images/portfolio/aircon_border.png', alt='aircon')
+								img(src='images/portfolio/aircon_border.png', alt='aircon', hidden)
 								.hover-mask
 									.flashcard_hover
 										h3 空調機
+									span
+										i.fa.fa-thumbs-o-up.fa-2x
+						// /single flashcard item
+						// single flashcard item
+						li.mix.unnecessary.hiddencard
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/user_border.png', data-title='user', data-description='user')
+								img(src='images/portfolio/user_border.png', alt='user')
+								.hover-mask
+									.flashcard_hover
+										h3 利用者
+									span
+										i.fa.fa-thumbs-o-up.fa-2x
+						// /single flashcard item
+						// single flashcard item
+						li.mix.unnecessary.hiddencard
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/bedroom_border.png', data-title='bedroom', data-description='bedroom')
+								img(src='images/portfolio/bedroom_border.png', alt='bedroom')
+								.hover-mask
+									.flashcard_hover
+										h3 寝室
 									span
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
@@ -473,16 +473,16 @@ block content
 									p#translation
 					// /Flashcard section
 					// percentage items. Lifted up to look like on the above row.
-					.row(style="margin-top: -30%")
+					.row(style="margin-top: -25%")
 						.col-md-3.col-sm-6.col-xs-12.wow.fadeInUp(data-wow-duration='500ms')
 							.skill-chart
-									span.chart(data-percent='80')
+									span.chart(data-percent='50')
 										span.percent
 									h3
 										i.fa.fa-book
-										|  ？
+										|  辞書の確実
 									p
-										| それは毎晩のところのどう前のうちに許しじまし。
+										| この辞書は全て正確な訳では御座いません。その上にまだ日本語で存在されていない単語も入っておりますが、皆様の協力で外日辞書を作りながら我々の使命を広めるようにお願い申し上げます。
 						// /percentage item
 						// percentage item
 						.col-md-3.col-sm-6.col-xs-12.col-lg-offset-6.col-md-offset-6.wow.fadeInUp(data-wow-duration='500ms')
@@ -493,7 +493,7 @@ block content
 										i.fa.fa-book
 										|  辞書完成率
 									p
-										| それは毎晩のところのどう前のうちに許しじまし。
+										| この辞書はまだ作成中で御座います。もし何か追加または変更の希望がありましたらお気軽にご連絡下さい。
 						// /percentage item
 					// End row
 				// End container
@@ -667,7 +667,7 @@ block content
 							// /section title
 							
 							p(style='font-size:18px;')
-								| 我々の使命には共感が御座いましたら、日本語を守ろうと言う気持ちを持って日本語擁護協会を入会して下さい。
+								| 我々の使命に共感が御座いましたら、日本語を守ろうと言う気持ちを持って日本語擁護協会を入会して下さい。
 								　協会するのは勿論無料で御座います。資料を集める為に必要な項目を全てご入力の程お願い致します。一緒に擁護者になって日本語を守ろう。一緒に、美しい言語へ。
 							
 							// join us button
@@ -760,7 +760,7 @@ block content
 						.contact-info.col-md-6.wow.fadeInUp(data-wow-duration='500ms')
 							h3 お問い合わせ内容
 							p
-								| 何かご意見、ご質問等が御座いましたらご気軽に右側の項目を入力してご連絡下さい。もし問題が発生したら直接に下記の電子住所へご連絡の程お願い致します。
+								| 何かご意見、ご質問等が御座いましたらお気軽に右側の項目を入力してご連絡下さい。もし問題が発生したら直接に下記の電子住所へご連絡の程お願い致します。
 							.contact-details
 								.con-info.clearfix
 									i.fa.fa-home.fa-lg
@@ -806,30 +806,30 @@ block content
 				.container
 					.row.wow.fadeInUp(data-wow-duration='500ms')
 						.col-lg-12
-							// Footer Social Links
-							.social-icon
-								ul
-									li
-										a(href='#')
-											i.fa.fa-facebook
-									li
-										a(href='#')
-											i.fa.fa-twitter
-									li
-										a(href='#')
-											i.fa.fa-google-plus
-									li
-										a(href='#')
-											i.fa.fa-youtube
-									li
-										a(href='#')
-											i.fa.fa-linkedin
-									li
-										a(href='#')
-											i.fa.fa-dribbble
-									li
-										a(href='#')
-											i.fa.fa-pinterest
+							// Footer Social Links. Add when ready.
+								.social-icon
+									ul
+										li
+											a(href='#')
+												i.fa.fa-facebook
+										li
+											a(href='#')
+												i.fa.fa-twitter
+										li
+											a(href='#')
+												i.fa.fa-google-plus
+										li
+											a(href='#')
+												i.fa.fa-youtube
+										li
+											a(href='#')
+												i.fa.fa-linkedin
+										li
+											a(href='#')
+												i.fa.fa-dribbble
+										li
+											a(href='#')
+												i.fa.fa-pinterest
 							// /. End Footer Social Links
 							// copyright
 							.copyright.text-center

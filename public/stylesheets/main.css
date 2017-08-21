@@ -571,6 +571,14 @@ h1, h2, h3, h4, h5, h6 {
 			transform: scale(1.4) rotate(15deg);
 }
 
+/* custom addition to hide cards whose code I might want to leave there but not show for the moment */
+/* simply display: none does not work. Adding !important breaks the click event. Using visibility: hidden takes div space */
+
+.hiddencard {
+    position: absolute ;
+    opacity: 0;
+}
+
 .hover-mask {
     top: 0;
     left: 0;

@@ -193,6 +193,20 @@ jQuery(function ($) { "use strict";
 
 	Grid.init(); //Portfolio Grid Expand
 	
+	// When clicking the button showmore_btn, show the hidden card
+	$("#showmore_btn").click(function(){
+	 $("#og-grid > li.hiddencard").removeClass('hiddencard');
+		
+	});
+	
+	// When clicking the button showless_btn, hide hideble cards
+	$("#showless_btn").click(function(){
+	 $("#og-grid > li.canhide").addClass('hiddencard');
+		
+	});
+	
+	
+	
 	
 	/* ========================================================================= */
 	/*	Testimonial Carousel
@@ -506,4 +520,5 @@ function parallaxInit() {
 $(window).bind("load", function () {
     parallaxInit()
 });
+                            
                             

@@ -363,7 +363,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.unnecessary
+						li.mix.unnecessary.hiddencard.canhide
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/evidence_border.png', data-title='evidence', data-description='evidence')
 								img(src='images/portfolio/evidence_border.png', alt='evidence')
 								.hover-mask
@@ -393,7 +393,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.unnecessary
+						li.mix.unnecessary.hiddencard.canhide
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/document_border.png', data-title='document', data-description='document')
 								img(src='images/portfolio/document_border.png', alt='document')
 								.hover-mask
@@ -413,9 +413,19 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.unnecessary.hiddencard
+						li.mix.avoidable
+							a(href='javascript:void(0)', data-largesrc='images/portfolio/bonus_border.png', data-title='bonus', data-description='bonus')
+								img(src='images/portfolio/bonus_border.png', alt='bonus')
+								.hover-mask
+									.flashcard_hover
+										h3 賞与
+									span
+										i.fa.fa-thumbs-o-up.fa-2x
+						// /single flashcard item
+						// single flashcard item
+						li.mix.unnecessary.hiddencard.canhide
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/aircon_border.png', data-title='aircon', data-description='aircon')
-								img(src='images/portfolio/aircon_border.png', alt='aircon', hidden)
+								img(src='images/portfolio/aircon_border.png', alt='aircon')
 								.hover-mask
 									.flashcard_hover
 										h3 空調機
@@ -423,7 +433,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.unnecessary.hiddencard
+						li.mix.unnecessary.hiddencard.canhide
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/user_border.png', data-title='user', data-description='user')
 								img(src='images/portfolio/user_border.png', alt='user')
 								.hover-mask
@@ -433,7 +443,7 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 						// single flashcard item
-						li.mix.unnecessary.hiddencard
+						li.mix.unnecessary.hiddencard.canhide
 							a(href='javascript:void(0)', data-largesrc='images/portfolio/bedroom_border.png', data-title='bedroom', data-description='bedroom')
 								img(src='images/portfolio/bedroom_border.png', alt='bedroom')
 								.hover-mask
@@ -443,6 +453,11 @@ block content
 										i.fa.fa-thumbs-o-up.fa-2x
 						// /single flashcard item
 					// end og grid
+					// Buttons to show/hide cards
+					.text-center
+						button#showmore_btn.btn.btn-transparent(type ='button' title='showmore', style="font-size:16px") もっと見る
+						button#showless_btn.btn.btn-transparent(type ='button' title='showless', style="font-size:16px; margin-left:20px") 少なく見る
+					// End buttons to show/hide cards
 				// flashcard items wrapper
 			// End section
 			//

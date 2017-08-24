@@ -672,21 +672,20 @@ block content
 					.row
 						// section title
 						.title.text-center
-							h2(style="margin-bottom:-35px;")
+							h2()
 								| 入
-								.joinus-logo.wow.fadeInDown(data-wow-duration='500ms' style="display:inline-block;")
-									span
-										i.fa.fa-language(style=" vertical-align: middle;")
-								span 会
-							.border(style="margin-bottom:30px;")
-							.col-lg-12.text-center
+								span.color 会
+							.border(style="margin-bottom:50px;")
 							// /section title
-							
-							p(style='font-size:18px;')
-								| 我々の使命に共感が御座いましたら、日本語を守ろうと言う気持ちを持って日本語擁護協会を入会して下さい。協会するのは勿論無料で御座います。資料を集める為に必要な項目を全てご入力の程お願い致します。一緒に擁護者になって日本語を守ろう。一緒に、美しい言語へ。
+							p(style='font-size:18px;text-align:left;background-color:rgba(0,0,0,0.2);padding:10px')
+								|  我々の使命に共感が御座いましたら、日本語を守ろうと言う気持ちを持って日本語擁護協会を入会して下さい。協会するのは勿論無料で御座います。資料を集める為に必要な項目を全てご入力の程お願い致します。一緒に擁護者になって日本語を守ろう。一緒に、美しい言語へ。
 							// join us button
 							a.btn.btn-transparent.btn-join.wow.fadeInUp(title='入会書', target='_blank', data-wow-duration='500ms', data-toggle="modal", data-target="#join_modal") 入会書表示
-						// /join us button
+							// /join us button
+							// TODO: Think if and where put the logo/icon below
+							// .joinus-logo.wow.fadeInDown(data-wow-duration='500ms' style=" display:inline-block")
+							// 	span
+							// 		i.fa.fa-3x.fa-language(style="")
 					// End row
 				// End container
 			// End section
@@ -706,6 +705,8 @@ block content
 						.clearfix
 							// single blog post
 							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
+								.text-center
+									i.fa.fa-3x.fa-cog.fa-spin(style='margin-bottom:10px')
 								.note
 									.media-wrapper
 										img.img-responsive(src='images/blog/cover.png', alt='cover')
@@ -713,11 +714,14 @@ block content
 										h3 記事の題名
 										p
 											| 第一の記事。第一の記事。第一の記事。第一の記事。
-										a.btn.btn-transparent(href='single-post.html' disabled) Read more
+										.text-center
+											a.btn.btn-transparent(href='single-post.html' disabled) もっと読む
 							// /single blog post
 							// single blog post
 							// single blog post
 							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
+								.text-center
+									i.fa.fa-3x.fa-cog.fa-spin(style='margin-bottom:10px')
 								.note
 									.media-wrapper
 										img.img-responsive(src='images/blog/cover.png', alt='cover')
@@ -725,11 +729,14 @@ block content
 										h3 記事の題名
 										p
 											| 第二の記事。第二の記事。第二の記事。第二の記事。
-										a.btn.btn-transparent(href='single-post.html' disabled) Read more
+										.text-center
+											a.btn.btn-transparent(href='single-post.html' disabled) もっと読む
 							// /single blog post
 							// single blog post
 							// single blog post
 							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
+								.text-center
+									i.fa.fa-3x.fa-cog.fa-spin(style='margin-bottom:10px')
 								.note
 									.media-wrapper
 										img.img-responsive(src='images/blog/cover.png', alt='cover')
@@ -737,10 +744,13 @@ block content
 										h3 記事の題名
 										p
 											| 第三の記事。第三の記事。第三の記事。第三の記事。
-										a.btn.btn-transparent(href='single-post.html' disabled) Read more
+										.text-center
+											a.btn.btn-transparent(href='single-post.html' disabled) もっと読む
 							// /single blog post
 							// single blog post
 							article.col-md-3.col-sm-6.col-xs-12.clearfix.wow.fadeInUp(data-wow-duration='500ms')
+								.text-center
+									i.fa.fa-3x.fa-cog.fa-spin(style='margin-bottom:10px')
 								.note
 									.media-wrapper
 										img.img-responsive(src='images/blog/cover.png', alt='cover')
@@ -748,7 +758,8 @@ block content
 										h3 記事の題名
 										p
 											| 第四の記事。第四の記事。第四の記事。第四の記事。
-										a.btn.btn-transparent(href='single-post.html' disabled) Read more
+										.text-center
+											a.btn.btn-transparent(href='single-post.html' disabled) もっと読む
 							// /single blog post
 							// single blog post
 							// single blog post

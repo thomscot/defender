@@ -51,7 +51,7 @@ function validator(req, res, next) {
   req.checkBody('namekana', 'お名前[かな]をご入力下さい。').notEmpty();
   req.checkBody('email', '入力された電子郵便住所が正しくありません。').isEmail();
   req.checkBody('email_confirm', '入力された確認電子郵便住所が正しくありません。').equals(req.body.email)
-  req.checkBody('location', '位置をご入力下さい。').notEmpty();
+  req.checkBody('location', 'ご住所をご入力下さい。').notEmpty();
   req.checkBody('age', '年齢をご入力下さい。').notEmpty();
   req.checkBody('sex', '性別をご入力下さい。').notEmpty();
   

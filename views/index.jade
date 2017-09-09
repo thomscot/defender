@@ -904,10 +904,11 @@ block content
 									input#join_email_confirmation.form-control(type='email', placeholder='電子郵便住所確認', name='email_confirmation')
 									#join_email_confirmation_error.validation-error
 								.row
-									.col-lg-6.col-md-6.col-sm-6.col-xs-5
-										input#join_location.form-control(type='text', placeholder='位置', name='location')
+									.col-lg-7.col-md-7.col-sm-7.col-xs-6
+										input#join_location.form-control(type='text', placeholder='住所*', name='location')
 										#join_location_error.validation-error
-									.col-lg-4.col-md-4.col-sm-4.col-xs-4
+										label(for='join_location' style='font-size: 9px') * 市町村のみでも構いません
+									.col-lg-3.col-md-3.col-sm-3.col-xs-3
 										input#join_age.form-control(type='number' min='0' max="120" placeholder='年齢', name='age')
 										#join_age_error.validation-error
 										#join_sex_error.validation-error

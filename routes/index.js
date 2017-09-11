@@ -14,8 +14,8 @@ router.get('/', function(req, res) {
  * Download the manifesto.
  */
 router.get('/gekibun_download', function (req, res, next) {
-    var filePath = __dirname +　"/../public/data/gekibun.txt"; 
-    var fileName = "gekibun.txt"; 
+    var filePath = __dirname +　"/../public/data/gekibun.pdf"; 
+    var fileName = "gekibun.pdf"; 
     res.download(filePath, fileName);    
 });
 

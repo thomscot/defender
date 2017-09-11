@@ -9,7 +9,7 @@ router.post('/addmember', validator, async (req,res) => {
 
     try {
           let db = req.db;
-          let collection = db.get('memberstest');
+          let collection = db.get('members');
           
           // Check if email is already in DB
           collection.findOne({'email': req.body.email }, function(err, member) {

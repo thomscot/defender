@@ -6,9 +6,18 @@
 /* ========================================================================= */
 
 $(document).ready(function() {
+  
+  // Load the gekibun
   $.get("/data/gekibun.txt", function(txt) {
     $('#gekibun').text(txt);
   })    
+  
+  // Simple spam filter: remove the wrong domain name string on user click
+  $('a.mail').on('click', function(){
+    var href = $(this).attr('href');
+    $(this).attr('href', href.replace('inyourface.', ''));
+	});
+  
 });
 
 jQuery(function ($) { "use strict";

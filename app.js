@@ -17,7 +17,8 @@ var bootstrap = require('express-bootstrap-service')
  , logger = require('morgan')
  , cookieParser = require('cookie-parser')
  , bodyParser = require('body-parser')
- , expressValidator = require('express-validator');
+ , expressValidator = require('express-validator')
+ , sslRedirect = require('heroku-ssl-redirect');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(sslRedirect());
 // Make our db accessible to our router
 // we're adding the object db (monk connection) to every HTTP req the app makes
 // TODO: maybe not optimal

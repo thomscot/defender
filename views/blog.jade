@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+  body#body
+    .text-center
+      h1 
+        | 記 
+        span.color 事
+    section#blog.bg-one
+      .text-center
+        h2 我々の素晴らしい味方
+      .border
+      br
+      br
+      br
+      #dogen.blog_article(style="padding:15px")
+      .text-center
+        form(action='/', method='get')
+          button#back_home.btn.btn-transparent(type='submit') 後ろへ
+          
+// TODO: eventually this page should just get the article title and contents from the request and render accordingly for each different article

@@ -1672,6 +1672,12 @@ blockquote {
     margin: 25px;
 }
 
+.blog_article {
+    white-space: pre-line; /* preserves new lines from gekibun.txt */
+    font-size: 18px;
+    margin: 30px;
+}
+
 .flashcard_hover h3 {
     color: #6cb670;
     font-size: 50px;

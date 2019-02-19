@@ -1,7 +1,7 @@
 Read Me
 ======
 
-Live at: wwww.nihongokai.com.
+Live at: www.nihongokai.com.
 
 A simple web application for a cultural association aiming to preserve the Japanese language against the tremendous amount of loan words introduced over the past decades, often for no real reason. It is the opinion of the founders and members that most of such laon words could be replaced with already existing native Japanese words. The association also promotes the creation of new words to replace existing loan words in an effort to reduce their number and drive the Japanese language according to a common aesthetic sense.
 
